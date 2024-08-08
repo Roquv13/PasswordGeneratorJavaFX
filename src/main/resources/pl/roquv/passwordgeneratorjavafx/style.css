@@ -1,0 +1,9 @@
+/* row 0 */
+.app-name{
+    -fx-font-size: 2em;
+}
+
+/* row 1 */
+.password-label{
+    -fx-background-color: #ff0000;
+}
