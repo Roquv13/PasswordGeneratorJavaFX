@@ -10,10 +10,12 @@
     <URL value="@style.css" />
   </stylesheets>
 
-  <Label text="Password Generator" styleClass="app-name"/>
+  <!--Header Label-->
+  <Label alignment="CENTER" text="Password Generator" styleClass="header-label" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="10"/>
 
-  <GridPane>
-    <!--Row 0-->
-    <Label fx:id="passwordLabel" styleClass="password-label" GridPane.rowIndex="1"  />
-  </GridPane>
+  <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60">
+    <!--Password Label-->
+    <Label fx:id="passwordLabel" text="Password123" styleClass="password-output" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+  </VBox>
+
 </AnchorPane>

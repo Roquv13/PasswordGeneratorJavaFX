@@ -1,9 +1,21 @@
-/* row 0 */
-.app-name{
-    -fx-font-size: 2em;
+.root {
+    -fx-padding: 20;
+    -fx-background-color: #f0f0f0;
+}
+
+/* label */
+.header-label{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
 }
 
 /* row 1 */
-.password-label{
-    -fx-background-color: #ff0000;
+.password-output{
+    -fx-font-size: 16px;
+    -fx-pref-width: 300px;
+    -fx-padding: 10px;
+    -fx-background-color: #fff;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
 }
