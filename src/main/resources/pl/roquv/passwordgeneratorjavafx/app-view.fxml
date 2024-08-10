@@ -23,6 +23,12 @@
       <Label fx:id="passwordLengthLabel" text="256" styleClass="password-length"/>
     </HBox>
 
+
+    <CheckBox fx:id="checkBoxLowercase" text="Lowercase"/>
+    <CheckBox fx:id="checkBoxUppercase" text="Uppercase"/>
+    <CheckBox fx:id="checkBoxNumbers" text="Numbers"/>
+    <CheckBox fx:id="checkBoxSpecialCharacters" text="Symbols"/>
+
     <!--Generate Button-->
     <Button fx:id="generateButton" text="Generate Password" styleClass="generate-button"/>
 
