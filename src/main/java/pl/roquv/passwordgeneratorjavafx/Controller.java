@@ -6,4 +6,7 @@ import javafx.scene.control.Label;
 public class Controller {
     @FXML
     private Label passwordLabel;
+
+    @FXML
+    private Label passwordLengthLabel;
 }
