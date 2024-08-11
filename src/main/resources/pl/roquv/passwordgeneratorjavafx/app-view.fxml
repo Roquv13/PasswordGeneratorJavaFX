@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Text?>
 <AnchorPane prefHeight="600" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controller">
 
   <stylesheets>
@@ -12,28 +13,29 @@
   </stylesheets>
 
   <!--Header Label-->
-  <Label alignment="CENTER" text="Password Generator" styleClass="header-label" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="10"/>
+  <Label alignment="CENTER" styleClass="header-label" text="Password Generator" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="10" />
 
   <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60">
 
     <HBox alignment="CENTER" spacing="20">
       <!--Password Length Title-->
-      <Text text="Password Length" styleClass="password-length-title"/>
+      <Text styleClass="password-length-title" text="Password Length" />
       <!--Password Length Label-->
-      <Label fx:id="passwordLengthLabel" text="256" styleClass="password-length"/>
+      <Label fx:id="passwordLengthLabel" styleClass="password-length" text="256" />
     </HBox>
 
-
-    <CheckBox fx:id="checkBoxLowercase" text="Lowercase"/>
-    <CheckBox fx:id="checkBoxUppercase" text="Uppercase"/>
-    <CheckBox fx:id="checkBoxNumbers" text="Numbers"/>
-    <CheckBox fx:id="checkBoxSpecialCharacters" text="Symbols"/>
+    <GridPane alignment="CENTER" vgap="10" hgap="10">
+      <CheckBox fx:id="checkBoxLowercase" text="Lowercase" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+      <CheckBox fx:id="checkBoxUppercase" text="Uppercase" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <CheckBox fx:id="checkBoxNumbers" text="Numbers" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <CheckBox fx:id="checkBoxSpecialCharacters" text="Symbols" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    </GridPane>
 
     <!--Generate Button-->
-    <Button fx:id="generateButton" text="Generate Password" styleClass="generate-button"/>
+    <Button fx:id="generateButton" styleClass="generate-button" text="Generate Password" />
 
     <!--Password Label-->
-    <Label fx:id="passwordLabel" text="Password123" styleClass="password-output"/>
+    <Label fx:id="passwordLabel" styleClass="password-output" text="Password123" />
   </VBox>
 
 </AnchorPane>
