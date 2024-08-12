@@ -21,7 +21,7 @@
       <!--Password Length Title-->
       <Text styleClass="password-length-title" text="Password Length" />
       <!--Password Length Label-->
-      <Label fx:id="passwordLengthLabel" styleClass="password-length" text="256" />
+      <TextField fx:id="passwordLengthLabel" styleClass="password-length" text="256"/>
     </HBox>
 
     <GridPane alignment="CENTER" vgap="10" hgap="10">
@@ -35,7 +35,7 @@
     <Button fx:id="generateButton" styleClass="generate-button" text="Generate Password" />
 
     <!--Password Label-->
-    <Label fx:id="passwordLabel" styleClass="password-output" text="Password123" />
+    <TextField fx:id="passwordLabel" styleClass="password-output" text="Password123" />
   </VBox>
 
 </AnchorPane>

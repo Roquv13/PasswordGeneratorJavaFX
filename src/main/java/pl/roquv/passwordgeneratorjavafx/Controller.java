@@ -1,16 +1,14 @@
 package pl.roquv.passwordgeneratorjavafx;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 public class Controller {
     @FXML
-    private Label passwordLabel;
+    private TextField passwordLabel;
 
     @FXML
-    private Label passwordLengthLabel;
+    private TextField passwordLengthLabel;
 
     @FXML
     private Button generateButton;
