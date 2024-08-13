@@ -8,10 +8,13 @@
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #333;
+    -fx-border-width: 2px;
+    -fx-border-style: hidden hidden solid hidden;
 }
 
 .password-length-title{
     -fx-font-size: 20px;
+    -fx-font-weight: bolder;
     -fx-pref-width: 200px;
 }
 
@@ -43,4 +46,12 @@
     -fx-background-color: #fff;
     -fx-border-color: #000000;
     -fx-border-radius: 5px;
+}
+
+.checkbox-text{
+    -fx-pref-width: 150px;
+    -fx-pref-height: 30px;
+    -fx-alignment: center;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
 }
