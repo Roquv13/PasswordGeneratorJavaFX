@@ -47,11 +47,20 @@ public class Controller {
         try {
             return Integer.parseInt(passwordLengthLabel.getText());
         } catch (NumberFormatException e) {
+            showErrorMessage("Invalid password length");
             return 0;
         }
     }
 
     private void updatePasswordLabel(String password) {
         passwordLabel.setText(password);
+    }
+
+    private void showErrorMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 }
