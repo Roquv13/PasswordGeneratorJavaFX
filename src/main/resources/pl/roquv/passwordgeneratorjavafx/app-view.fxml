@@ -21,18 +21,18 @@
       <!--Password Length Title-->
       <Text styleClass="password-length-title" text="Password Length" />
       <!--Password Length Label-->
-      <TextField fx:id="passwordLengthLabel" styleClass="password-length" text="256"/>
+      <TextField fx:id="passwordLengthLabel" styleClass="password-length" text="10"/>
     </HBox>
 
     <GridPane alignment="CENTER" vgap="10" hgap="10">
       <CheckBox fx:id="checkBoxLowercase" text="Lowercase" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="checkbox-text"/>
       <CheckBox fx:id="checkBoxUppercase" text="Uppercase" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="checkbox-text"/>
       <CheckBox fx:id="checkBoxNumbers" text="Numbers" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="checkbox-text"/>
-      <CheckBox fx:id="checkBoxSpecialCharacters" text="Symbols" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="checkbox-text"/>
+      <CheckBox fx:id="checkBoxSpecialSymbols" text="Symbols" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="checkbox-text"/>
     </GridPane>
 
     <!--Generate Button-->
-    <Button fx:id="generateButton" styleClass="generate-button" text="Generate Password" />
+    <Button onAction="#handleGenerateButtonClick" fx:id="generateButton" styleClass="generate-button" text="Generate Password" />
 
     <!--Password Label-->
     <TextField fx:id="passwordLabel" styleClass="password-output" text="Password123" />

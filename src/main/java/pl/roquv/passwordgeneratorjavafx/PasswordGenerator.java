@@ -10,14 +10,14 @@ public class PasswordGenerator {
         random = new Random();
     }
 
-    public String generatePassword(int length, boolean includeUppercase, boolean includeLowercase,
+    public String generatePassword(int length, boolean includeLowercase, boolean includeUppercase,
                                    boolean includeNumbers, boolean includeSpecialSymbols) {
 
         StringBuilder passwordBuilder = new StringBuilder();
 
         String validCharacters = "";
-        if (includeUppercase) validCharacters += Constants.UPPERCASE_CHARACTERS;
         if (includeLowercase) validCharacters += Constants.LOWERCASE_CHARACTERS;
+        if (includeUppercase) validCharacters += Constants.UPPERCASE_CHARACTERS;
         if (includeNumbers) validCharacters += Constants.NUMBERS;
         if (includeSpecialSymbols) validCharacters += Constants.SPECIAL_SYMBOLS;
 
