@@ -30,7 +30,7 @@ public class Controller {
 
     public void handleGenerateButtonClick() {
 
-        int passwordLength = Integer.parseInt(passwordLengthLabel.getText());
+        int passwordLength = getPasswordLength();
 
         boolean checkBoxLowercaseSelected = checkBoxLowercase.isSelected();
         boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
@@ -41,5 +41,13 @@ public class Controller {
                 checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
 
         passwordLabel.setText(generatedPassword);
+    }
+
+    private int getPasswordLength() {
+        try {
+            return Integer.parseInt(passwordLengthLabel.getText());
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 }
