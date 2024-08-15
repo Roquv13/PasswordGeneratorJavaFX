@@ -40,7 +40,7 @@ public class Controller {
         String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
                 checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
 
-        passwordLabel.setText(generatedPassword);
+        updatePasswordLabel(generatedPassword);
     }
 
     private int getPasswordLength() {
@@ -49,5 +49,9 @@ public class Controller {
         } catch (NumberFormatException e) {
             return 0;
         }
+    }
+
+    private void updatePasswordLabel(String password) {
+        passwordLabel.setText(password);
     }
 }
