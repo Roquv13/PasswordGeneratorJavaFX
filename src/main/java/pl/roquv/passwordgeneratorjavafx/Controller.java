@@ -37,10 +37,14 @@ public class Controller {
         boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
         boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
 
-        String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
-                checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
+        if (!isAnyCheckboxSelected()) {
+            showErrorMessage("One or more checkbox must be selected");
+        } else {
+            String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
+                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
 
-        updatePasswordLabel(generatedPassword);
+            updatePasswordLabel(generatedPassword);
+        }
     }
 
     private int getPasswordLength() {
@@ -50,6 +54,11 @@ public class Controller {
             showErrorMessage("Invalid password length");
             return 0;
         }
+    }
+
+    private boolean isAnyCheckboxSelected() {
+        return checkBoxLowercase.isSelected() || checkBoxUppercase.isSelected() ||
+                checkBoxNumbers.isSelected() || checkBoxSpecialSymbols.isSelected();
     }
 
     private void updatePasswordLabel(String password) {
