@@ -35,6 +35,7 @@ public class PasswordGenerator {
 
     public String generatePassword(int length, boolean includeUppercase, boolean includeLowercase,
                                    boolean includeNumbers, boolean includeSpecialSymbols) {
+
         StringBuilder passwordBuilder = new StringBuilder();
 
         String validCharacters = "";
@@ -43,6 +44,14 @@ public class PasswordGenerator {
         if (includeNumbers) validCharacters += Constants.NUMBERS;
         if (includeSpecialSymbols) validCharacters += Constants.SPECIAL_SYMBOLS;
 
-        return "ok";
+        for(int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(validCharacters.length());
+
+            char randomChar = validCharacters.charAt(randomIndex);
+
+            passwordBuilder.append(randomChar);
+        }
+
+        return passwordBuilder.toString();
     }
 }
