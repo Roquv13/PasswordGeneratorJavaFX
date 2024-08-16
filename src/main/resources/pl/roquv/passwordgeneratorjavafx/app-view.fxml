@@ -35,8 +35,19 @@
     <!--Generate Button-->
     <Button onAction="#handleGenerateButtonClick" styleClass="generate-button" text="Generate Password" />
 
-    <!--Password Label-->
-    <TextField fx:id="passwordLabel" styleClass="password-output"/>
+    <HBox alignment="CENTER">
+      <!--Password Label-->
+      <TextField fx:id="passwordLabel" styleClass="password-output"/>
+
+      <!--Copy to Clipboard Button-->
+      <Button onAction="#handleCopyToClipboardButtonClick" styleClass="copy-button">
+        <graphic>
+          <ImageView fitWidth="30" fitHeight="30">
+            <Image url="@icons/clipboard-icon.png"/>
+          </ImageView>
+        </graphic>
+      </Button>
+    </HBox>
 
     <StackPane>
       <HBox alignment="CENTER_RIGHT" spacing="10">
@@ -44,7 +55,7 @@
         <Button onAction="#handleSettingsButtonClick" alignment="BASELINE_LEFT" styleClass="settings-button">
           <graphic>
             <ImageView fitWidth="24" fitHeight="24">
-              <Image url="@settings-icon.png"/>
+              <Image url="@icons/settings-icon.png"/>
             </ImageView>
           </graphic>
         </Button>
@@ -52,14 +63,11 @@
         <Button onAction="#handleHelpButtonClick" alignment="BASELINE_LEFT" styleClass="help-button">
           <graphic>
             <ImageView fitWidth="24" fitHeight="24">
-              <Image url="@help-icon.png"/>
+              <Image url="@icons/help-icon.png"/>
             </ImageView>
           </graphic>
         </Button>
       </HBox>
-
-      <!--Copy to Clipboard Button-->
-      <Button onAction="#handleCopyToClipboardButtonClick" alignment="CENTER" styleClass="copy-button" text="Copy to Clipboard" />
     </StackPane>
 
   </VBox>

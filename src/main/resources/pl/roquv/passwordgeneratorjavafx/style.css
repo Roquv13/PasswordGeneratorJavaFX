@@ -41,11 +41,13 @@
 
 .password-output{
     -fx-font-size: 16px;
+    -fx-pref-height: 47px;
     -fx-pref-width: 350px;
     -fx-padding: 10px;
     -fx-background-color: #fff;
     -fx-border-color: #000000;
-    -fx-border-radius: 5px;
+    -fx-border-radius: 5px 0 0 5px;
+    -fx-border-style: solid hidden solid solid;
 }
 
 .settings-button{
@@ -68,14 +70,15 @@
 }
 
 .copy-button{
-    -fx-pref-height: 40px;
+    -fx-pref-height: 47px;
+    -fx-pref-width: 47px;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
     -fx-background-color: #ff5900;
-    -fx-background-radius: 9px;
+    -fx-background-radius: 0 9px 9px 0;
     -fx-border-color: #000000;
-    -fx-border-radius: 5px;
+    -fx-border-radius: 0 5px 5px 0;
 }
 
 .checkbox-text{
