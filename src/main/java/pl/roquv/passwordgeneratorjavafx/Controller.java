@@ -48,12 +48,17 @@ public class Controller {
 
     public void handleCopyToClipboardButtonClick() {
 
-        String password = passwordLabel.getText();
+        if (isPasswordLabelEmpty()) {
+            showErrorMessage("Password is empty");
+        } else {
+            String password = passwordLabel.getText();
 
-        Clipboard clipboard = Clipboard.getSystemClipboard();
-        ClipboardContent content = new ClipboardContent();
-        content.putString(password);
-        clipboard.setContent(content);
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent content = new ClipboardContent();
+            content.putString(password);
+            clipboard.setContent(content);
+        }
+
     }
 
     private int getPasswordLength() {
@@ -68,6 +73,10 @@ public class Controller {
     private boolean isAnyCheckboxSelected() {
         return checkBoxLowercase.isSelected() || checkBoxUppercase.isSelected() ||
                 checkBoxNumbers.isSelected() || checkBoxSpecialSymbols.isSelected();
+    }
+
+    private boolean isPasswordLabelEmpty() {
+        return passwordLabel.getText().isEmpty();
     }
 
     private void updatePasswordLabel(String password) {
