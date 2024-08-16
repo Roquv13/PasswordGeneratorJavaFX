@@ -21,7 +21,7 @@
       <!--Password Length Title-->
       <Text styleClass="password-length-title" text="Password Length" />
       <!--Password Length Label-->
-      <TextField fx:id="passwordLengthLabel" styleClass="password-length" text="10"/>
+      <TextField fx:id="passwordLengthLabel" styleClass="password-length"/>
     </HBox>
 
     <GridPane alignment="CENTER" vgap="10" hgap="10">
