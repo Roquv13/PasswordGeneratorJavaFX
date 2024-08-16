@@ -12,9 +12,6 @@ public class Controller {
     private TextField passwordLengthLabel;
 
     @FXML
-    private Button generateButton;
-
-    @FXML
     private CheckBox checkBoxLowercase;
 
     @FXML

@@ -48,6 +48,15 @@
     -fx-border-radius: 5px;
 }
 
+.copy-button{
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #ff5900;
+    -fx-background-radius: 9px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+
 .checkbox-text{
     -fx-pref-width: 150px;
     -fx-pref-height: 30px;
