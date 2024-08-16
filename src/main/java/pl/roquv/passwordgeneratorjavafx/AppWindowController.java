@@ -83,7 +83,7 @@ public class AppWindowController {
             Scene scene = new Scene(root);
             helpStage.setScene(scene);
 
-            String iconPath = getClass().getResource("help-icon.png").toExternalForm();
+            String iconPath = getClass().getResource("icons/help-icon.png").toExternalForm();
             helpStage.getIcons().add(new Image(iconPath));
 
             helpStage.showAndWait();
