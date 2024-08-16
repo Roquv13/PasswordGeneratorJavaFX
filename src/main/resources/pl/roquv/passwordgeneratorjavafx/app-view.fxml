@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="600" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.AppWindowController">
 
   <stylesheets>
@@ -37,9 +39,23 @@
     <TextField fx:id="passwordLabel" styleClass="password-output"/>
 
     <StackPane>
-      <HBox alignment="CENTER_LEFT">
+      <HBox alignment="CENTER_LEFT" spacing="10">
+        <!--Settings Button-->
+        <Button onAction="#handleSettingsButtonClick" alignment="BASELINE_LEFT" styleClass="settings-button">
+          <graphic>
+            <ImageView fitWidth="24" fitHeight="24">
+              <Image url="@settings-icon.png"/>
+            </ImageView>
+          </graphic>
+        </Button>
         <!--Help Button-->
-        <Button onAction="#handleHelpButtonClick" text="?" alignment="BASELINE_LEFT" styleClass="help-button"/>
+        <Button onAction="#handleHelpButtonClick" alignment="BASELINE_LEFT" styleClass="help-button">
+          <graphic>
+            <ImageView fitWidth="24" fitHeight="24">
+              <Image url="@help-icon.png"/>
+            </ImageView>
+          </graphic>
+        </Button>
       </HBox>
 
       <!--Copy to Clipboard Button-->

@@ -68,6 +68,10 @@ public class AppWindowController {
 
     }
 
+    public void handleSettingsButtonClick() {
+
+    }
+
     public void handleHelpButtonClick() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
