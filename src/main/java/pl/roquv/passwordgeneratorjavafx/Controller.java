@@ -31,18 +31,22 @@ public class Controller {
 
         int passwordLength = getPasswordLength();
 
-        boolean checkBoxLowercaseSelected = checkBoxLowercase.isSelected();
-        boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
-        boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
-        boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
+        if (isPasswordLengthInRange(4, 100)) {
+            boolean checkBoxLowercaseSelected = checkBoxLowercase.isSelected();
+            boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
+            boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
+            boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
 
-        if (!isAnyCheckboxSelected()) {
-            showErrorMessage("One or more checkbox must be selected");
+            if (!isAnyCheckboxSelected()) {
+                showErrorMessage("One or more checkbox must be selected");
+            } else {
+                String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
+                        checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
+
+                updatePasswordLabel(generatedPassword);
+            }
         } else {
-            String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
-                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
-
-            updatePasswordLabel(generatedPassword);
+            showErrorMessage("Password length must be between 4 and 100");
         }
     }
 
@@ -68,6 +72,11 @@ public class Controller {
             showErrorMessage("Invalid password length");
             return 0;
         }
+    }
+
+    private boolean isPasswordLengthInRange(int min, int max){
+        int passwordLength = getPasswordLength();
+        return  ((passwordLength >= min) && (passwordLength <= max));
     }
 
     private boolean isAnyCheckboxSelected() {
