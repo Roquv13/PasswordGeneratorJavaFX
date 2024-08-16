@@ -36,8 +36,16 @@
     <!--Password Label-->
     <TextField fx:id="passwordLabel" styleClass="password-output"/>
 
-    <!--Copy to Clipboard Button-->
-    <Button onAction="#handleCopyToClipboardButtonClick" styleClass="copy-button" text="Copy to Clipboard" />
+    <StackPane>
+      <HBox alignment="CENTER_LEFT">
+        <!--Help Button-->
+        <Button text="?" alignment="BASELINE_LEFT" styleClass="help-button"/>
+      </HBox>
+
+      <!--Copy to Clipboard Button-->
+      <Button onAction="#handleCopyToClipboardButtonClick" alignment="CENTER" styleClass="copy-button" text="Copy to Clipboard" />
+    </StackPane>
+
   </VBox>
 
 </AnchorPane>

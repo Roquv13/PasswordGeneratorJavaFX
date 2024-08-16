@@ -57,6 +57,16 @@
     -fx-border-radius: 5px;
 }
 
+.help-button{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #0052ff;
+    -fx-background-radius: 9px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+
 .checkbox-text{
     -fx-pref-width: 150px;
     -fx-pref-height: 30px;
