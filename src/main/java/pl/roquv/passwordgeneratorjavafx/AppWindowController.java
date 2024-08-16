@@ -1,12 +1,16 @@
 package pl.roquv.passwordgeneratorjavafx;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import javafx.stage.Stage;
 
-public class Controller {
+public class AppWindowController {
     @FXML
     private TextField passwordLabel;
 
@@ -51,7 +55,6 @@ public class Controller {
     }
 
     public void handleCopyToClipboardButtonClick() {
-
         if (isPasswordLabelEmpty()) {
             showErrorMessage("Password is empty");
         } else {
@@ -63,6 +66,27 @@ public class Controller {
             clipboard.setContent(content);
         }
 
+    }
+
+    public void handleHelpButtonClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage helpStage = new Stage();
+            helpStage.setTitle("Help");
+
+            Scene scene = new Scene(root);
+            helpStage.setScene(scene);
+
+            String iconPath = getClass().getResource("help-icon.png").toExternalForm();
+            helpStage.getIcons().add(new Image(iconPath));
+
+            helpStage.showAndWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showErrorMessage("Could not open help window");
+        }
     }
 
     private int getPasswordLength() {

@@ -17,7 +17,7 @@ public class App extends javafx.application.Application {
         stage.setTitle("PasswordGenerator");
         stage.setScene(scene);
 
-        String iconPath = getClass().getResource("icon.png").toExternalForm();
+        String iconPath = getClass().getResource("main-icon.png").toExternalForm();
         stage.getIcons().add(new Image(iconPath));
 
         stage.show();

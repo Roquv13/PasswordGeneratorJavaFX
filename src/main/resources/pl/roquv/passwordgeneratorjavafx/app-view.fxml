@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controller">
+<AnchorPane prefHeight="600" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.AppWindowController">
 
   <stylesheets>
     <URL value="@style.css" />
@@ -39,7 +39,7 @@
     <StackPane>
       <HBox alignment="CENTER_LEFT">
         <!--Help Button-->
-        <Button text="?" alignment="BASELINE_LEFT" styleClass="help-button"/>
+        <Button onAction="#handleHelpButtonClick" text="?" alignment="BASELINE_LEFT" styleClass="help-button"/>
       </HBox>
 
       <!--Copy to Clipboard Button-->
