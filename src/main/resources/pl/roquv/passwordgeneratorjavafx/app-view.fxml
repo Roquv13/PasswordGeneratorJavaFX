@@ -39,7 +39,7 @@
     <TextField fx:id="passwordLabel" styleClass="password-output"/>
 
     <StackPane>
-      <HBox alignment="CENTER_LEFT" spacing="10">
+      <HBox alignment="CENTER_RIGHT" spacing="10">
         <!--Settings Button-->
         <Button onAction="#handleSettingsButtonClick" alignment="BASELINE_LEFT" styleClass="settings-button">
           <graphic>
