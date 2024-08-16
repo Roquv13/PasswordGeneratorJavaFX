@@ -37,7 +37,7 @@
     <TextField fx:id="passwordLabel" styleClass="password-output"/>
 
     <!--Copy to Clipboard Button-->
-    <Button styleClass="copy-button" text="Copy to Clipboard" />
+    <Button onAction="#handleCopyToClipboardButtonClick" styleClass="copy-button" text="Copy to Clipboard" />
   </VBox>
 
 </AnchorPane>

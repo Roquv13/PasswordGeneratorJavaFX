@@ -3,6 +3,8 @@ package pl.roquv.passwordgeneratorjavafx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 
 public class Controller {
     @FXML
@@ -42,6 +44,16 @@ public class Controller {
 
             updatePasswordLabel(generatedPassword);
         }
+    }
+
+    public void handleCopyToClipboardButtonClick() {
+
+        String password = passwordLabel.getText();
+
+        Clipboard clipboard = Clipboard.getSystemClipboard();
+        ClipboardContent content = new ClipboardContent();
+        content.putString(password);
+        clipboard.setContent(content);
     }
 
     private int getPasswordLength() {
