@@ -1,4 +1,4 @@
-package pl.roquv.passwordgeneratorjavafx;
+package pl.roquv.passwordgeneratorjavafx.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
+import pl.roquv.passwordgeneratorjavafx.App;
+import pl.roquv.passwordgeneratorjavafx.PasswordGenerator;
 
 public class AppWindowController {
     @FXML

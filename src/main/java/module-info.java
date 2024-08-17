@@ -6,4 +6,6 @@ module pl.roquv.passwordgeneratorjavafx {
 
     opens pl.roquv.passwordgeneratorjavafx to javafx.fxml;
     exports pl.roquv.passwordgeneratorjavafx;
+    exports pl.roquv.passwordgeneratorjavafx.Controllers;
+    opens pl.roquv.passwordgeneratorjavafx.Controllers to javafx.fxml;
 }
