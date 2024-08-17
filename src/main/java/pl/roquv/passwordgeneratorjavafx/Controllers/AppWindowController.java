@@ -33,6 +33,8 @@ public class AppWindowController {
 
     private final PasswordGenerator passwordGenerator = new PasswordGenerator();
 
+    private final SaveWindowController saveWindowController = new SaveWindowController();
+
     public void handleGenerateButtonClick() {
 
         int passwordLength = getPasswordLength();
@@ -71,7 +73,17 @@ public class AppWindowController {
     }
 
     public void handleSaveButtonClick() {
-        openNewWindow("Save Password", "save.fxml", "icons/main-icon.png");
+        String password = getPassword();
+
+        if (isPasswordLabelEmpty()) {
+            showErrorMessage("Password is empty");
+        } else {
+            // Save password to list
+            SaveWindowController.addPassword(password);
+
+            // Open password list window
+            openNewWindow("Save Password", "save.fxml", "icons/main-icon.png");
+        }
     }
 
     public void handleSettingsButtonClick() {
@@ -80,6 +92,10 @@ public class AppWindowController {
 
     public void handleHelpButtonClick() {
         openNewWindow("Help", "help.fxml", "icons/help-icon.png");
+    }
+
+    private String getPassword() {
+        return passwordLabel.getText();
     }
 
     private void openNewWindow(String title, String fxmlPathName, String iconPathName) {

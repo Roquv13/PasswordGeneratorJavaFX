@@ -1,4 +1,12 @@
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
 <AnchorPane prefHeight="420" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.SaveWindowController">
-
+    <VBox alignment="CENTER">
+        <Label text="Saved Passwords"/>
+        <ListView fx:id="passwordListView"/>
+        <Button fx:id="closeButton" onAction="#handleCloseButtonClick" text="Close"/>
+    </VBox>
 </AnchorPane>
