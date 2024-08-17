@@ -32,7 +32,7 @@ public class SaveWindowController {
 
     @FXML
     public void handleClearButtonClick() {
-        passwordListView.getItems().clear();
+        clearPasswords();
         closeWindow();
     }
 
@@ -43,5 +43,10 @@ public class SaveWindowController {
     private void closeWindow() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
+    }
+
+    private void clearPasswords() {
+        passwordListView.getItems().clear();
+        savedPasswords.clear();
     }
 }
