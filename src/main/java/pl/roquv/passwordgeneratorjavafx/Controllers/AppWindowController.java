@@ -71,7 +71,7 @@ public class AppWindowController {
     }
 
     public void handleSaveButtonClick() {
-        openNewWindow("Save Password", "save.fxml", "icons/main.png");
+        openNewWindow("Save Password", "save.fxml", "icons/main-icon.png");
     }
 
     public void handleSettingsButtonClick() {

@@ -50,12 +50,9 @@
     </HBox>
 
     <StackPane>
-      <!--Save Password Button-->
-      <Button fx:id="saveButton" text="Save Password" onAction="#handleSaveButtonClick" alignment="CENTER" styleClass="save-button"/>
-
       <HBox alignment="CENTER_RIGHT" spacing="10">
         <!--Settings Button-->
-        <Button onAction="#handleSettingsButtonClick" alignment="BASELINE_LEFT" styleClass="settings-button">
+        <Button onAction="#handleSettingsButtonClick" styleClass="settings-button">
           <graphic>
             <ImageView fitWidth="24" fitHeight="24">
               <Image url="@icons/settings-icon.png"/>
@@ -63,7 +60,7 @@
           </graphic>
         </Button>
         <!--Help Button-->
-        <Button onAction="#handleHelpButtonClick" alignment="BASELINE_LEFT" styleClass="help-button">
+        <Button onAction="#handleHelpButtonClick" styleClass="help-button">
           <graphic>
             <ImageView fitWidth="24" fitHeight="24">
               <Image url="@icons/help-icon.png"/>
@@ -71,6 +68,9 @@
           </graphic>
         </Button>
       </HBox>
+
+      <!--Save Password Button-->
+      <Button onAction="#handleSaveButtonClick" alignment="CENTER" text="Save Password" styleClass="save-button"/>
     </StackPane>
 
   </VBox>
