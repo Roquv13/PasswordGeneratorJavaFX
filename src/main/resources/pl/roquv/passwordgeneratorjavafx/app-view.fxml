@@ -50,6 +50,9 @@
     </HBox>
 
     <StackPane>
+      <!--Save Password Button-->
+      <Button alignment="CENTER" text="Save Password" styleClass="save-button"/>
+
       <HBox alignment="CENTER_RIGHT" spacing="10">
         <!--Settings Button-->
         <Button onAction="#handleSettingsButtonClick" alignment="BASELINE_LEFT" styleClass="settings-button">

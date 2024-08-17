@@ -1,9 +1,10 @@
 .root {
     -fx-padding: 20;
     -fx-background-color: #f0f0f0;
+    -fx-font-family: Tahoma;
 }
 
-/* label */
+/* Header */
 .header-label{
     -fx-font-size: 24px;
     -fx-font-weight: bold;
@@ -12,12 +13,14 @@
     -fx-border-style: hidden hidden solid hidden;
 }
 
+/* Password length title */
 .password-length-title{
     -fx-font-size: 20px;
     -fx-font-weight: bolder;
     -fx-pref-width: 200px;
 }
 
+/* Password length value */
 .password-length{
     -fx-font-size: 16px;
     -fx-pref-width: 80px;
@@ -29,6 +32,16 @@
     -fx-alignment: center;
 }
 
+/* Password chars */
+.checkbox-text{
+    -fx-pref-width: 150px;
+    -fx-pref-height: 30px;
+    -fx-alignment: center;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Generate password */
 .generate-button{
     -fx-font-size: 20px;
     -fx-font-weight: bold;
@@ -39,6 +52,7 @@
     -fx-border-radius: 5px;
 }
 
+/* Password output */
 .password-output{
     -fx-font-size: 16px;
     -fx-pref-height: 47px;
@@ -50,25 +64,7 @@
     -fx-border-style: solid hidden solid solid;
 }
 
-.settings-button{
-    -fx-pref-height: 40px;
-    -fx-pref-width: 40px;
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 9px;
-    -fx-border-color: #000000;
-    -fx-border-radius: 5px;
-}
-
-
-.help-button{
-    -fx-pref-height: 40px;
-    -fx-pref-width: 40px;
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 9px;
-    -fx-border-color: #000000;
-    -fx-border-radius: 5px;
-}
-
+/* Copy password button */
 .copy-button{
     -fx-pref-height: 47px;
     -fx-pref-width: 47px;
@@ -81,10 +77,34 @@
     -fx-border-radius: 0 5px 5px 0;
 }
 
-.checkbox-text{
-    -fx-pref-width: 150px;
-    -fx-pref-height: 30px;
-    -fx-alignment: center;
+/* Save password button */
+.save-button{
+    -fx-pref-height: 40px;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #0077FFBC;
+    -fx-background-radius: 9px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+
+/* Settings button */
+.settings-button{
+    -fx-pref-height: 40px;
+    -fx-pref-width: 40px;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 9px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
+}
+
+/* Help button */
+.help-button{
+    -fx-pref-height: 40px;
+    -fx-pref-width: 40px;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 9px;
+    -fx-border-color: #000000;
+    -fx-border-radius: 5px;
 }
