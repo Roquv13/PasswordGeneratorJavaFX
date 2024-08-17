@@ -69,7 +69,24 @@ public class AppWindowController {
     }
 
     public void handleSettingsButtonClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("settings.fxml"));
+            Parent root = fxmlLoader.load();
 
+            Stage helpStage = new Stage();
+            helpStage.setTitle("Settings");
+
+            Scene scene = new Scene(root);
+            helpStage.setScene(scene);
+
+            String iconPath = getClass().getResource("icons/settings-icon.png").toExternalForm();
+            helpStage.getIcons().add(new Image(iconPath));
+
+            helpStage.showAndWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showErrorMessage("Could not open help window");
+        }
     }
 
     public void handleHelpButtonClick() {
