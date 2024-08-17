@@ -71,62 +71,32 @@ public class AppWindowController {
     }
 
     public void handleSaveButtonClick() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("save.fxml"));
-            Parent root = fxmlLoader.load();
-
-            Stage saveStage = new Stage();
-            saveStage.setTitle("Saving Password");
-
-            Scene scene = new Scene(root);
-            saveStage.setScene(scene);
-
-            String iconPath = getClass().getResource("icons/help-icon.png").toExternalForm();
-           saveStage.getIcons().add(new Image(iconPath));
-
-            saveStage.showAndWait();
-        } catch (Exception e) {
-            e.printStackTrace();
-            showErrorMessage("Could not open help window");
-        }
+        openNewWindow("Save Password", "save.fxml", "icons/main.png");
     }
 
     public void handleSettingsButtonClick() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("settings.fxml"));
-            Parent root = fxmlLoader.load();
-
-            Stage settingsStage = new Stage();
-            settingsStage.setTitle("Settings");
-
-            Scene scene = new Scene(root);
-            settingsStage.setScene(scene);
-
-            String iconPath = getClass().getResource("icons/settings-icon.png").toExternalForm();
-            settingsStage.getIcons().add(new Image(iconPath));
-
-            settingsStage.showAndWait();
-        } catch (Exception e) {
-            e.printStackTrace();
-            showErrorMessage("Could not open help window");
-        }
+        openNewWindow("Settings", "settings.fxml", "icons/settings-icon.png");
     }
 
     public void handleHelpButtonClick() {
+        openNewWindow("Help", "help.fxml", "icons/help-icon.png");
+    }
+
+    private void openNewWindow(String title, String fxmlPathName, String iconPathName) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("help.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxmlPathName));
             Parent root = fxmlLoader.load();
 
-            Stage helpStage = new Stage();
-            helpStage.setTitle("Help");
+            Stage stage = new Stage();
+            stage.setTitle(title);
 
             Scene scene = new Scene(root);
-            helpStage.setScene(scene);
+            stage.setScene(scene);
 
-            String iconPath = getClass().getResource("icons/help-icon.png").toExternalForm();
-            helpStage.getIcons().add(new Image(iconPath));
+            String iconPath = App.class.getResource(iconPathName).toExternalForm();
+            stage.getIcons().add(new Image(iconPath));
 
-            helpStage.showAndWait();
+            stage.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
             showErrorMessage("Could not open help window");

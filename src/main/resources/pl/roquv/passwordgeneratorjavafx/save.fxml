@@ -1,4 +1,5 @@
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
 <AnchorPane prefHeight="420" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.SaveWindowController">
-
+    <Text text="Test"/>
 </AnchorPane>
