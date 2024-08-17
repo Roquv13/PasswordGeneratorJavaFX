@@ -79,8 +79,8 @@ public class AppWindowController {
             Scene scene = new Scene(root);
             saveStage.setScene(scene);
 
-//            String iconPath = getClass().getResource("icons/save-icon.png").toExternalForm();
-//            saveStage.getIcons().add(new Image(iconPath));
+            String iconPath = getClass().getResource("icons/help-icon.png").toExternalForm();
+           saveStage.getIcons().add(new Image(iconPath));
 
             saveStage.showAndWait();
         } catch (Exception e) {
