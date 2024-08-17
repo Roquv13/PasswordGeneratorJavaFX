@@ -8,5 +8,6 @@
         <Label text="Saved Passwords"/>
         <ListView fx:id="passwordListView"/>
         <Button fx:id="closeButton" onAction="#handleCloseButtonClick" text="Close"/>
+        <Button fx:id="clearButton" onAction="#handleClearButtonClick" text="Clear"/>
     </VBox>
 </AnchorPane>
