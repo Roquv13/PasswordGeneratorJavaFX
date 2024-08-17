@@ -68,21 +68,42 @@ public class AppWindowController {
 
     }
 
+    public void handleSaveButtonClick() {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("save.fxml"));
+            Parent root = fxmlLoader.load();
+
+            Stage saveStage = new Stage();
+            saveStage.setTitle("Saving Password");
+
+            Scene scene = new Scene(root);
+            saveStage.setScene(scene);
+
+//            String iconPath = getClass().getResource("icons/save-icon.png").toExternalForm();
+//            saveStage.getIcons().add(new Image(iconPath));
+
+            saveStage.showAndWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showErrorMessage("Could not open help window");
+        }
+    }
+
     public void handleSettingsButtonClick() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("settings.fxml"));
             Parent root = fxmlLoader.load();
 
-            Stage helpStage = new Stage();
-            helpStage.setTitle("Settings");
+            Stage settingsStage = new Stage();
+            settingsStage.setTitle("Settings");
 
             Scene scene = new Scene(root);
-            helpStage.setScene(scene);
+            settingsStage.setScene(scene);
 
             String iconPath = getClass().getResource("icons/settings-icon.png").toExternalForm();
-            helpStage.getIcons().add(new Image(iconPath));
+            settingsStage.getIcons().add(new Image(iconPath));
 
-            helpStage.showAndWait();
+            settingsStage.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
             showErrorMessage("Could not open help window");
