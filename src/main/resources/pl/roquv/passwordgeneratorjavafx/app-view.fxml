@@ -25,10 +25,10 @@
 
     <VBox spacing="10" alignment="CENTER">
       <!--Password Length Title-->
-      <Text fx:id="passwordLengthTitle" styleClass="password-length-title" text="Characters: " />
+      <Text fx:id="passwordLengthTitle" styleClass="password-length-title"/>
 
       <!--Password Length Slider -->
-      <Slider fx:id="passwordLengthSlider"/>
+      <Slider fx:id="passwordLengthSlider" styleClass="password-length-slider"/>
     </VBox>
 
     <GridPane alignment="CENTER" vgap="10" hgap="10">

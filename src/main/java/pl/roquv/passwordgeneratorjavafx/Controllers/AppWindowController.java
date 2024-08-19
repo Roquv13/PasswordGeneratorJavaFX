@@ -24,9 +24,6 @@ public class AppWindowController {
     private Text passwordLengthTitle;
 
     @FXML
-    private TextField passwordLengthLabel;
-
-    @FXML
     private Slider passwordLengthSlider;
 
     @FXML
@@ -56,6 +53,10 @@ public class AppWindowController {
         passwordLengthSlider.setMin(passwordMinLength);
         passwordLengthSlider.setMax(passwordMaxLength);
 
+        // Set Initial value of slider to title
+        passwordLengthTitle.setText("Characters: " + (int) passwordLengthSlider.getValue());
+
+        // Add listener for slider
         passwordLengthSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observableValue, Number oldValue, Number newValue) {
@@ -132,7 +133,7 @@ public class AppWindowController {
     }
 
     private void updatePasswordLengthTitle(int newValue) {
-        passwordLengthTitle.setText("Password length: " + newValue);
+        passwordLengthTitle.setText("Characters: " + newValue);
     }
 
     private void openNewWindow(String title, String fxmlPathName, String iconPathName) {

@@ -16,19 +16,27 @@
 .password-length-title{
     -fx-font-size: 20px;
     -fx-font-weight: bolder;
+}
+
+/* Password length slider */
+.password-length-slider {
+    -fx-pref-height: 25px;
     -fx-pref-width: 200px;
 }
 
-/* Password length value */
-.password-length{
-    -fx-font-size: 16px;
-    -fx-pref-width: 80px;
-    -fx-padding: 10px;
-    -fx-background-color: #fff;
-    -fx-border-color: #000000;
-    -fx-border-radius: 5px;
-    -fx-border-width: 1px;
-    -fx-alignment: center;
+/* Slider track */
+.password-length-slider .track {
+    -fx-background-color: #c3c3c3;
+    -fx-pref-height: 24px;
+    -fx-shape: "M0,0 L1,0 L1,1 L0,1 Z";
+}
+
+/* Slider thumb */
+.password-length-slider .thumb {
+    -fx-background-color: #ff5900;
+    -fx-pref-width: 25px;
+    -fx-pref-height: 25px;
+    -fx-shape: "M0,0 L1,0 L1,1 L0,1 Z";
 }
 
 /* Password chars */
