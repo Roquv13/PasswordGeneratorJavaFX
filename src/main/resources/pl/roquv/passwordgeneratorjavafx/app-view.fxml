@@ -23,14 +23,13 @@
 
   <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="65">
 
-    <Slider fx:id="passwordLengthSlider"/>
-
-    <HBox alignment="CENTER" spacing="20">
+    <VBox spacing="10" alignment="CENTER">
       <!--Password Length Title-->
       <Text fx:id="passwordLengthTitle" styleClass="password-length-title" text="Characters: " />
-      <!--Password Length Text Field-->
-      <TextField fx:id="passwordLengthLabel" styleClass="password-length"/>
-    </HBox>
+
+      <!--Password Length Slider -->
+      <Slider fx:id="passwordLengthSlider"/>
+    </VBox>
 
     <GridPane alignment="CENTER" vgap="10" hgap="10">
       <CheckBox fx:id="checkBoxLowercase" text="Lowercase" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="checkbox-text"/>
