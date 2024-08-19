@@ -32,10 +32,10 @@
     </VBox>
 
     <GridPane alignment="CENTER" vgap="10" hgap="10">
-      <CheckBox fx:id="checkBoxLowercase" text="Lowercase" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="checkbox-text"/>
-      <CheckBox fx:id="checkBoxUppercase" text="Uppercase" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="checkbox-text"/>
-      <CheckBox fx:id="checkBoxNumbers" text="Numbers" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="checkbox-text"/>
-      <CheckBox fx:id="checkBoxSpecialSymbols" text="Symbols" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="checkbox-text"/>
+      <CheckBox fx:id="checkBoxLowercase" text="Lowercase (a-z)" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="checkbox-text"/>
+      <CheckBox fx:id="checkBoxUppercase" text="Uppercase (A-Z)" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="checkbox-text"/>
+      <CheckBox fx:id="checkBoxNumbers" text="Numbers (0-9)" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="checkbox-text"/>
+      <CheckBox fx:id="checkBoxSpecialSymbols" text="Symbols (!@#)" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="checkbox-text"/>
     </GridPane>
 
     <!--Generate Button-->
