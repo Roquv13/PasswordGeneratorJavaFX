@@ -69,8 +69,19 @@
         </Button>
       </HBox>
 
-      <!--Save Password Button-->
-      <Button onAction="#handleSaveButtonClick" alignment="CENTER" text="Save Password" styleClass="save-button"/>
+      <HBox alignment="CENTER">
+        <!--Save Password Button-->
+        <Button onAction="#handleSavePasswordButtonClick" text="Save Password" styleClass="save-password-button"/>
+
+        <!-- Saved Passwords Window Button -->
+        <Button onAction="#handleOpenPasswordsWindowButtonClick" styleClass="open-saved-passwords-button">
+          <graphic>
+            <ImageView fitWidth="25" fitHeight="25">
+              <Image url="@icons/savedPassword-icon.png"/>
+            </ImageView>
+          </graphic>
+        </Button>
+      </HBox>
     </StackPane>
 
   </VBox>

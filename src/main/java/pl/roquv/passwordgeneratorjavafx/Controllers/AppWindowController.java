@@ -72,7 +72,7 @@ public class AppWindowController {
 
     }
 
-    public void handleSaveButtonClick() {
+    public void handleSavePasswordButtonClick() {
         String password = getPassword();
 
         if (isPasswordLabelEmpty()) {
@@ -80,10 +80,12 @@ public class AppWindowController {
         } else {
             // Save password to list
             SaveWindowController.addPassword(password);
-
-            // Open password list window
-            openNewWindow("Save Password", "save.fxml", "icons/main-icon.png");
         }
+    }
+
+    public void handleOpenPasswordsWindowButtonClick() {
+        // Open password list window
+        openNewWindow("Save Password", "save.fxml", "icons/main-icon.png");
     }
 
     public void handleSettingsButtonClick() {

@@ -78,15 +78,25 @@
 }
 
 /* Save password button */
-.save-button{
+.save-password-button{
     -fx-pref-height: 40px;
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
     -fx-background-color: #0077FFBC;
-    -fx-background-radius: 9px;
+    -fx-background-radius: 9px 0 0 9px;
+    -fx-border-style: solid hidden solid solid;
     -fx-border-color: #000000;
-    -fx-border-radius: 5px;
+    -fx-border-radius: 6px 0 0 6px;
+}
+
+/* Open password window button */
+.open-saved-passwords-button{
+    -fx-pref-height: 40px;
+    -fx-background-color: rgba(255, 255, 255, 0.74);
+    -fx-background-radius: 0 9px 9px 0;
+    -fx-border-color: #000000;
+    -fx-border-radius: 0 5px 5px 0;
 }
 
 /* Settings button */
