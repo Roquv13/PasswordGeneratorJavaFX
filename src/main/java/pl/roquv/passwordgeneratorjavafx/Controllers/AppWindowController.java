@@ -27,6 +27,9 @@ public class AppWindowController {
     private TextField passwordLengthLabel;
 
     @FXML
+    private Slider passwordLengthSlider;
+
+    @FXML
     private CheckBox checkBoxLowercase;
 
     @FXML
@@ -44,12 +47,19 @@ public class AppWindowController {
 
     private final Alerts alerts = new Alerts();
 
+    // Minimal and Maximal size of password
+    private final int passwordMinLength = 4;
+    private final int passwordMaxLength = 100;
+
     @FXML
     public void initialize() {
-        passwordLengthLabel.textProperty().addListener(new ChangeListener<String>() {
+        passwordLengthSlider.setMin(passwordMinLength);
+        passwordLengthSlider.setMax(passwordMaxLength);
+
+        passwordLengthSlider.valueProperty().addListener(new ChangeListener<Number>() {
             @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
-                updatePasswordLengthTitle(newValue);
+            public void changed(ObservableValue<? extends Number> observableValue, Number oldValue, Number newValue) {
+                updatePasswordLengthTitle(newValue.intValue());
             }
         });
     }
@@ -58,7 +68,7 @@ public class AppWindowController {
 
         int passwordLength = getPasswordLength();
 
-        if (isPasswordLengthInRange(4, 100)) {
+        if (isPasswordLengthInRange(passwordMinLength, passwordMaxLength)) {
             boolean checkBoxLowercaseSelected = checkBoxLowercase.isSelected();
             boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
             boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
@@ -73,7 +83,7 @@ public class AppWindowController {
                 updatePasswordLabel(generatedPassword);
             }
         } else {
-            alerts.showErrorMessage("Password length must be between 4 and 100");
+            alerts.showErrorMessage("Password length must be between " + passwordMinLength + " and " + passwordMaxLength);
         }
     }
 
@@ -121,12 +131,8 @@ public class AppWindowController {
         return passwordLabel.getText();
     }
 
-    private void updatePasswordLengthTitle(String newValue) {
-        if (newValue.isEmpty()) {
-            passwordLengthTitle.setText("Password Length:");
-        } else {
-            passwordLengthTitle.setText("Password Length: " + newValue);
-        }
+    private void updatePasswordLengthTitle(int newValue) {
+        passwordLengthTitle.setText("Password length: " + newValue);
     }
 
     private void openNewWindow(String title, String fxmlPathName, String iconPathName) {
