@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.stage.Stage;
+import pl.roquv.passwordgeneratorjavafx.Alert;
 import pl.roquv.passwordgeneratorjavafx.App;
 import pl.roquv.passwordgeneratorjavafx.PasswordGenerator;
 
@@ -35,6 +36,8 @@ public class AppWindowController {
 
     private final SaveWindowController saveWindowController = new SaveWindowController();
 
+    private final Alert alert = new Alert();
+
     public void handleGenerateButtonClick() {
 
         int passwordLength = getPasswordLength();
@@ -46,7 +49,7 @@ public class AppWindowController {
             boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
 
             if (!isAnyCheckboxSelected()) {
-                showErrorMessage("One or more checkbox must be selected");
+                alert.showErrorMessage("One or more checkbox must be selected");
             } else {
                 String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
                         checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
@@ -54,13 +57,13 @@ public class AppWindowController {
                 updatePasswordLabel(generatedPassword);
             }
         } else {
-            showErrorMessage("Password length must be between 4 and 100");
+            alert.showErrorMessage("Password length must be between 4 and 100");
         }
     }
 
     public void handleCopyToClipboardButtonClick() {
         if (isPasswordLabelEmpty()) {
-            showErrorMessage("Password is empty");
+            alert.showErrorMessage("Password is empty");
         } else {
             String password = passwordLabel.getText();
 
@@ -76,10 +79,12 @@ public class AppWindowController {
         String password = getPassword();
 
         if (isPasswordLabelEmpty()) {
-            showErrorMessage("Password is empty");
+            alert.showErrorMessage("Password is empty");
         } else {
             // Save password to list
             SaveWindowController.addPassword(password);
+            // Show alert about saving password
+            alert.showInfoMessage("Password has been saved");
         }
     }
 
@@ -117,7 +122,7 @@ public class AppWindowController {
             stage.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
-            showErrorMessage("Could not open help window");
+            alert.showErrorMessage("Could not open help window");
         }
     }
 
@@ -125,7 +130,7 @@ public class AppWindowController {
         try {
             return Integer.parseInt(passwordLengthLabel.getText());
         } catch (NumberFormatException e) {
-            showErrorMessage("Invalid password length");
+            alert.showErrorMessage("Invalid password length");
             return 0;
         }
     }
@@ -146,13 +151,5 @@ public class AppWindowController {
 
     private void updatePasswordLabel(String password) {
         passwordLabel.setText(password);
-    }
-
-    private void showErrorMessage(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 }
