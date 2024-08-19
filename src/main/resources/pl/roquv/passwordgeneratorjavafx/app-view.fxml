@@ -24,7 +24,7 @@
 
     <VBox alignment="CENTER" spacing="10">
       <!--Password Length Text-->
-      <Text fx:id="passwordLengthText" styleClass="password-length-text" />
+      <Text fx:id="passwordLengthText" styleClass="password-length-text" text="Characters: " />
 
       <!--Password Length Slider -->
       <Slider fx:id="passwordLengthSlider" styleClass="password-length-slider" />
