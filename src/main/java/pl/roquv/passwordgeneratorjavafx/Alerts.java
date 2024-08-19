@@ -1,6 +1,6 @@
 package pl.roquv.passwordgeneratorjavafx;
 
-public class Alert {
+public class Alerts {
     public void showErrorMessage(String message) {
         javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
         alert.setTitle("Error");

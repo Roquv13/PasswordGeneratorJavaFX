@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import pl.roquv.passwordgeneratorjavafx.Alerts;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,8 @@ public class SaveWindowController {
     private Button clearButton;
 
     private static final List<String> savedPasswords = new ArrayList<>();
+
+    private final Alerts alerts = new Alerts();
 
     @FXML
     public void initialize() {
@@ -48,5 +51,6 @@ public class SaveWindowController {
     private void clearPasswords() {
         passwordListView.getItems().clear();
         savedPasswords.clear();
+        alerts.showInfoMessage("Password has been cleared");
     }
 }
