@@ -1,5 +1,7 @@
 package pl.roquv.passwordgeneratorjavafx.Controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pl.roquv.passwordgeneratorjavafx.Alerts;
 import pl.roquv.passwordgeneratorjavafx.App;
@@ -16,6 +19,9 @@ import pl.roquv.passwordgeneratorjavafx.PasswordGenerator;
 public class AppWindowController {
     @FXML
     private TextField passwordLabel;
+
+    @FXML
+    private Text passwordLengthTitle;
 
     @FXML
     private TextField passwordLengthLabel;
@@ -37,6 +43,16 @@ public class AppWindowController {
     private final SaveWindowController saveWindowController = new SaveWindowController();
 
     private final Alerts alerts = new Alerts();
+
+    @FXML
+    public void initialize() {
+        passwordLengthLabel.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                updatePasswordLengthTitle(newValue);
+            }
+        });
+    }
 
     public void handleGenerateButtonClick() {
 
@@ -103,6 +119,14 @@ public class AppWindowController {
 
     private String getPassword() {
         return passwordLabel.getText();
+    }
+
+    private void updatePasswordLengthTitle(String newValue) {
+        if (newValue.isEmpty()) {
+            passwordLengthTitle.setText("Password Length:");
+        } else {
+            passwordLengthTitle.setText("Password Length: " + newValue);
+        }
     }
 
     private void openNewWindow(String title, String fxmlPathName, String iconPathName) {

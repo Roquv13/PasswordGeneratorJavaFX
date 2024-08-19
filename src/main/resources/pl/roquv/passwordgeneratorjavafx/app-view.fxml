@@ -13,15 +13,20 @@
     <URL value="@style.css" />
   </stylesheets>
 
-  <!--Header Label-->
-  <Label alignment="CENTER" styleClass="header-label" text="Password Generator" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="10" />
+  <!-- Header -->
+  <HBox alignment="CENTER" spacing="10" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+    <ImageView fitWidth="50" fitHeight="50">
+      <Image url="@icons/main-icon.png"/>
+    </ImageView>
+    <Label alignment="CENTER" styleClass="header-label" text="Password Generator"/>
+  </HBox>
 
-  <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60">
+  <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="65">
 
     <HBox alignment="CENTER" spacing="20">
       <!--Password Length Title-->
-      <Text styleClass="password-length-title" text="Password Length" />
-      <!--Password Length Label-->
+      <Text fx:id="passwordLengthTitle" styleClass="password-length-title" text="Characters: " />
+      <!--Password Length Text Field-->
       <TextField fx:id="passwordLengthLabel" styleClass="password-length"/>
     </HBox>
 
@@ -50,7 +55,7 @@
     </HBox>
 
     <StackPane>
-      <HBox alignment="CENTER_RIGHT" spacing="10">
+      <HBox alignment="CENTER_RIGHT" spacing="13">
         <!--Settings Button-->
         <Button onAction="#handleSettingsButtonClick" styleClass="settings-button">
           <graphic>

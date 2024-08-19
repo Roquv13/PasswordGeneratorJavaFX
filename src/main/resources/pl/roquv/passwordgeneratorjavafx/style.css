@@ -6,11 +6,10 @@
 
 /* Header */
 .header-label{
-    -fx-font-size: 24px;
+    -fx-font-size: 30px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333;
-    -fx-border-width: 2px;
-    -fx-border-style: hidden hidden solid hidden;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);
 }
 
 /* Password length title */
