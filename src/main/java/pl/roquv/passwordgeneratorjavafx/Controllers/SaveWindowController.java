@@ -49,7 +49,9 @@ public class SaveWindowController {
     }
 
     private void clearPasswords() {
+        // Clear List View
         passwordListView.getItems().clear();
+        // Clear List of passwords
         savedPasswords.clear();
         alerts.showInfoMessage("Password has been cleared");
     }
