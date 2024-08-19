@@ -18,10 +18,10 @@ import pl.roquv.passwordgeneratorjavafx.PasswordGenerator;
 
 public class AppWindowController {
     @FXML
-    private TextField passwordLabel;
+    private TextField passwordTextField;
 
     @FXML
-    private Text passwordLengthTitle;
+    private Text passwordLengthText;
 
     @FXML
     private Slider passwordLengthSlider;
@@ -54,7 +54,7 @@ public class AppWindowController {
         passwordLengthSlider.setMax(passwordMaxLength);
 
         // Set Initial value of slider to title
-        passwordLengthTitle.setText("Characters: " + (int) passwordLengthSlider.getValue());
+        passwordLengthText.setText("Characters: " + (int) passwordLengthSlider.getValue());
 
         // Add listener for slider
         passwordLengthSlider.valueProperty().addListener(new ChangeListener<Number>() {
@@ -92,7 +92,7 @@ public class AppWindowController {
         if (isPasswordLabelEmpty()) {
             alerts.showErrorMessage("Password is empty");
         } else {
-            String password = passwordLabel.getText();
+            String password = passwordTextField.getText();
 
             Clipboard clipboard = Clipboard.getSystemClipboard();
             ClipboardContent content = new ClipboardContent();
@@ -129,11 +129,11 @@ public class AppWindowController {
     }
 
     private String getPassword() {
-        return passwordLabel.getText();
+        return passwordTextField.getText();
     }
 
     private void updatePasswordLengthTitle(int newValue) {
-        passwordLengthTitle.setText("Characters: " + newValue);
+        passwordLengthText.setText("Characters: " + newValue);
     }
 
     private void openNewWindow(String title, String fxmlPathName, String iconPathName) {
@@ -177,10 +177,10 @@ public class AppWindowController {
     }
 
     private boolean isPasswordLabelEmpty() {
-        return passwordLabel.getText().isEmpty();
+        return passwordTextField.getText().isEmpty();
     }
 
     private void updatePasswordLabel(String password) {
-        passwordLabel.setText(password);
+        passwordTextField.setText(password);
     }
 }

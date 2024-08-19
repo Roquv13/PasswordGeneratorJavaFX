@@ -24,8 +24,8 @@
   <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="65">
 
     <VBox spacing="10" alignment="CENTER">
-      <!--Password Length Title-->
-      <Text fx:id="passwordLengthTitle" styleClass="password-length-title"/>
+      <!--Password Length Text-->
+      <Text fx:id="passwordLengthText" styleClass="password-length-text"/>
 
       <!--Password Length Slider -->
       <Slider fx:id="passwordLengthSlider" styleClass="password-length-slider"/>
@@ -43,7 +43,7 @@
 
     <HBox alignment="CENTER">
       <!--Password Label-->
-      <TextField fx:id="passwordLabel" styleClass="password-output"/>
+      <TextField fx:id="passwordTextField" styleClass="password-text-field"/>
 
       <!--Copy to Clipboard Button-->
       <Button onAction="#handleCopyToClipboardButtonClick" styleClass="copy-button">

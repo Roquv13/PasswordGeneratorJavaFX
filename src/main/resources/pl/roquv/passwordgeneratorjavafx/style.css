@@ -13,7 +13,7 @@
 }
 
 /* Password length title */
-.password-length-title{
+.password-length-text{
     -fx-font-size: 20px;
     -fx-font-weight: bolder;
 }
@@ -48,19 +48,20 @@
     -fx-font-weight: bold;
 }
 
-/* Generate password */
+/* Generate button */
 .generate-button{
     -fx-font-size: 20px;
     -fx-font-weight: bold;
     -fx-text-fill: #ffffff;
     -fx-background-color: #048504;
     -fx-background-radius: 9px;
+    -fx-background-insets: 0;
     -fx-border-color: #000000;
     -fx-border-radius: 5px;
 }
 
-/* Password output */
-.password-output{
+/* Password text field */
+.password-text-field{
     -fx-font-size: 16px;
     -fx-pref-height: 47px;
     -fx-pref-width: 360px;
@@ -71,7 +72,7 @@
     -fx-border-style: solid hidden solid solid;
 }
 
-/* Copy password button */
+/* Copy button */
 .copy-button{
     -fx-pref-height: 47px;
     -fx-pref-width: 47px;
@@ -80,6 +81,7 @@
     -fx-text-fill: #ffffff;
     -fx-background-color: #ff5900;
     -fx-background-radius: 0 9px 9px 0;
+    -fx-background-insets: 0;
     -fx-border-color: #000000;
     -fx-border-radius: 0 5px 5px 0;
 }
@@ -92,12 +94,13 @@
     -fx-text-fill: #ffffff;
     -fx-background-color: #0077FFBC;
     -fx-background-radius: 9px 0 0 9px;
+    -fx-background-insets: 0;
     -fx-border-style: solid hidden solid solid;
     -fx-border-color: #000000;
     -fx-border-radius: 6px 0 0 6px;
 }
 
-/* Open password window button */
+/* Open saved passwords button */
 .open-saved-passwords-button{
     -fx-pref-height: 40px;
     -fx-background-color: rgba(255, 255, 255, 0.74);
