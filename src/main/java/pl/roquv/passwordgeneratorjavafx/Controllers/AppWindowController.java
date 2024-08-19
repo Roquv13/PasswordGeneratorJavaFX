@@ -158,7 +158,7 @@ public class AppWindowController {
 
     private int getPasswordLength() {
         try {
-            return Integer.parseInt(passwordLengthLabel.getText());
+            return (int) passwordLengthSlider.getValue();
         } catch (NumberFormatException e) {
             alerts.showErrorMessage("Invalid password length");
             return 0;
