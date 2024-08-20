@@ -19,6 +19,9 @@ public class SaveWindowController {
     @FXML
     private Button clearButton;
 
+    @FXML
+    private Button saveToFileButton;
+
     private static final List<String> savedPasswords = new ArrayList<>();
 
     private final Alerts alerts = new Alerts();
@@ -37,6 +40,10 @@ public class SaveWindowController {
     public void handleClearButtonClick() {
         clearPasswords();
         closeWindow();
+    }
+
+    @FXML
+    public void handleSaveToFileButtonClick() {
     }
 
     public static void addPassword(String password) {
