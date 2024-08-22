@@ -56,14 +56,23 @@ public class SaveWindowController {
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extensionFilter);
 
-        File file = fileChooser.showSaveDialog(new Stage());
+        File file = fileChooser.showSaveDialog(null);
 
+
+        if (savedPasswords != null) {
+            savePasswordsToFile(savedPasswords, file);
+        } else {
+            alerts.showErrorMessage("There is no passwords to save");
+        }
+    }
+
+    private void savePasswordsToFile(List<String> passwordsList, File file) {
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file))) {
-            for (String password : savedPasswords) {
+            for (String password : passwordsList) {
                 bufferedWriter.write(password);
                 bufferedWriter.newLine();
             }
-            System.out.println("Password saved successfully to " + file.getAbsolutePath());
+            alerts.showInfoMessage("Passwords sucessfully saved to " + file.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }
