@@ -56,11 +56,14 @@ public class SaveWindowController {
         FileChooser.ExtensionFilter extensionFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extensionFilter);
 
-        File file = fileChooser.showSaveDialog(null);
+        if (!savedPasswords.isEmpty()) {
+            File file = fileChooser.showSaveDialog(null);
 
-
-        if (savedPasswords != null) {
-            savePasswordsToFile(savedPasswords, file);
+            if (file != null) {
+                savePasswordsToFile(savedPasswords, file);
+            } else {
+                alerts.showErrorMessage("Password saving operation was interrupted");
+            }
         } else {
             alerts.showErrorMessage("There is no passwords to save");
         }
@@ -72,7 +75,7 @@ public class SaveWindowController {
                 bufferedWriter.write(password);
                 bufferedWriter.newLine();
             }
-            alerts.showInfoMessage("Passwords sucessfully saved to " + file.getAbsolutePath());
+            alerts.showInfoMessage("Passwords successfully saved to " + file.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -92,6 +95,6 @@ public class SaveWindowController {
         passwordListView.getItems().clear();
         // Clear List of passwords
         savedPasswords.clear();
-        alerts.showInfoMessage("Password has been cleared");
+        alerts.showInfoMessage("Password list has been cleared");
     }
 }
