@@ -17,24 +17,24 @@
     <ImageView fitHeight="50" fitWidth="50">
       <Image url="@../icons/main-icon.png" />
     </ImageView>
-    <Label alignment="CENTER" styleClass="header-label" text="Password Generator" />
+    <Label alignment="CENTER" styleClass="header-label" text="%window.title" />
   </HBox>
 
   <VBox alignment="CENTER" spacing="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="65">
 
     <VBox alignment="CENTER" spacing="10">
       <!--Password Length Text-->
-      <Text fx:id="passwordLengthText" styleClass="password-length-text" text="Characters: " />
+      <Text fx:id="passwordLengthText" styleClass="password-length-text" text="%characters.label" />
 
       <!--Password Length Slider -->
       <Slider fx:id="passwordLengthSlider" styleClass="password-length-slider" />
     </VBox>
 
     <GridPane alignment="CENTER" hgap="10" vgap="10">
-      <CheckBox fx:id="checkBoxLowercase" styleClass="checkbox-text" text="Lowercase (a-z)" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-      <CheckBox fx:id="checkBoxUppercase" styleClass="checkbox-text" text="Uppercase (A-Z)" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-      <CheckBox fx:id="checkBoxNumbers" styleClass="checkbox-text" text="Numbers (0-9)" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-      <CheckBox fx:id="checkBoxSpecialSymbols" styleClass="checkbox-text" text="Symbols (!@#)" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <CheckBox fx:id="checkBoxLowercase" styleClass="checkbox-text" text="%checkbox.lowercase" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+      <CheckBox fx:id="checkBoxUppercase" styleClass="checkbox-text" text="%checkbox.uppercase" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+      <CheckBox fx:id="checkBoxNumbers" styleClass="checkbox-text" text="%checkbox.numbers" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <CheckBox fx:id="checkBoxSpecialSymbols" styleClass="checkbox-text" text="%checkbox.symbols" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          <columnConstraints>
             <ColumnConstraints />
             <ColumnConstraints />
@@ -46,7 +46,7 @@
     </GridPane>
 
     <!--Generate Button-->
-    <Button onAction="#handleGenerateButtonClick" styleClass="generate-button" text="Generate Password" />
+    <Button onAction="#handleGenerateButtonClick" styleClass="generate-button" text="%generate.button" />
 
     <HBox alignment="CENTER">
       <!--Password Label-->
@@ -84,7 +84,7 @@
 
       <HBox alignment="CENTER" maxWidth="200">
         <!--Save Password Button-->
-        <Button onAction="#handleSavePasswordButtonClick" styleClass="save-password-button" text="Save Password" />
+        <Button onAction="#handleSavePasswordButtonClick" styleClass="save-password-button" text="%save.password.button" />
 
         <!-- Saved Passwords Window Button -->
         <Button onAction="#handleOpenPasswordsWindowButtonClick" styleClass="open-saved-passwords-button">
