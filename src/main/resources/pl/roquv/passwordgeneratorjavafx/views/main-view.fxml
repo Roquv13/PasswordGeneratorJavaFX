@@ -9,7 +9,7 @@
 <AnchorPane prefHeight="600" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.AppWindowController">
 
   <stylesheets>
-    <URL value="@../style.css" />
+    <URL value="@../styles/main-view-style.css" />
   </stylesheets>
 
   <!-- Header -->
