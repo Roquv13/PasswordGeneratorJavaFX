@@ -1,13 +1,11 @@
 package pl.roquv.passwordgeneratorjavafx;
 
-import com.sun.tools.javac.Main;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.nio.file.Path;
 
 public class App extends javafx.application.Application {
     @Override

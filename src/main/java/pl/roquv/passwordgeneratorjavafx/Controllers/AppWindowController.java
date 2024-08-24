@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pl.roquv.passwordgeneratorjavafx.Alerts;
 import pl.roquv.passwordgeneratorjavafx.App;
+import pl.roquv.passwordgeneratorjavafx.ConfigManager;
 import pl.roquv.passwordgeneratorjavafx.Generator.PasswordGenerator;
 
 public class AppWindowController {
@@ -46,8 +47,8 @@ public class AppWindowController {
     private final Alerts alerts = new Alerts();
 
     // Minimal and Maximal size of password
-    private final int passwordMinLength = 4;
-    private final int passwordMaxLength = 100;
+    private final int passwordMinLength = Integer.parseInt(ConfigManager.getProperty("password.length.min"));
+    private final int passwordMaxLength = Integer.parseInt(ConfigManager.getProperty("password.length.max"));
 
     @FXML
     public void initialize() {
