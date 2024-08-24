@@ -82,28 +82,24 @@ public class AppWindowController {
 
         int passwordLength = getPasswordLength();
 
-        if (isPasswordLengthInRange(passwordMinLength, passwordMaxLength)) {
-            boolean checkBoxLowercaseSelected = checkBoxLowercase.isSelected();
-            boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
-            boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
-            boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
+        boolean checkBoxLowercaseSelected = checkBoxLowercase.isSelected();
+        boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
+        boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
+        boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
 
-            if (!isAnyCheckboxSelected()) {
-                alerts.showErrorMessage("One or more checkbox must be selected");
-            } else {
-                String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
-                        checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
-
-                updatePasswordLabel(generatedPassword);
-            }
+        if (!isAnyCheckboxSelected()) {
+            alerts.showErrorMessage(bundle.getString("checkbox.error.message"));
         } else {
-            alerts.showErrorMessage("Password length must be between " + passwordMinLength + " and " + passwordMaxLength);
+            String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
+                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
+
+            updatePasswordLabel(generatedPassword);
         }
     }
 
     public void handleCopyToClipboardButtonClick() {
         if (isPasswordLabelEmpty()) {
-            alerts.showErrorMessage("Password is empty");
+            alerts.showErrorMessage(bundle.getString("empty.password.error.message"));
         } else {
             String password = passwordTextField.getText();
 
@@ -119,26 +115,26 @@ public class AppWindowController {
         String password = getPassword();
 
         if (isPasswordLabelEmpty()) {
-            alerts.showErrorMessage("Password is empty");
+            alerts.showErrorMessage(bundle.getString("empty.password.error.message"));
         } else {
             // Save password to list
             SaveWindowController.addPassword(password);
             // Show alert about saving password
-            alerts.showInfoMessage("Password has been saved");
+            alerts.showInfoMessage(bundle.getString("saved.password.info.message"));
         }
     }
 
     public void handleOpenPasswordsWindowButtonClick() {
         // Open password list window
-        openNewWindow("Save Password", "views/save-view.fxml", "icons/main-icon.png");
+        openNewWindow(bundle.getString("open.window.save.button"), "views/save-view.fxml", "icons/main-icon.png");
     }
 
     public void handleSettingsButtonClick() {
-        openNewWindow("Settings", "views/settings-view.fxml", "icons/settings-icon.png");
+        openNewWindow(bundle.getString("open.window.settings.button"), "views/settings-view.fxml", "icons/settings-icon.png");
     }
 
     public void handleHelpButtonClick() {
-        openNewWindow("Help", "views/help-view.fxml", "icons/help-icon.png");
+        openNewWindow(bundle.getString("open.window.help.button"), "views/help-view.fxml", "icons/help-icon.png");
     }
 
     private String getPassword() {
@@ -166,7 +162,7 @@ public class AppWindowController {
             stage.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
-            alerts.showErrorMessage("Could not open help window");
+            alerts.showErrorMessage(bundle.getString("open.window.error.message"));
         }
     }
 
@@ -174,7 +170,7 @@ public class AppWindowController {
         try {
             return (int) passwordLengthSlider.getValue();
         } catch (NumberFormatException e) {
-            alerts.showErrorMessage("Invalid password length");
+            alerts.showErrorMessage(bundle.getString("invalid.password.length.error"));
             return 0;
         }
     }
