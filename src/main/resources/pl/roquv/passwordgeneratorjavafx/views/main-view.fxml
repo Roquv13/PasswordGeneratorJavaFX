@@ -90,7 +90,7 @@
         <Button onAction="#handleOpenPasswordsWindowButtonClick" styleClass="open-saved-passwords-button">
           <graphic>
             <ImageView fitWidth="25" fitHeight="25">
-              <Image url="@../icons/savedPassword-icon.png"/>
+              <Image url="@../icons/saved-password-icon.png"/>
             </ImageView>
           </graphic>
         </Button>
