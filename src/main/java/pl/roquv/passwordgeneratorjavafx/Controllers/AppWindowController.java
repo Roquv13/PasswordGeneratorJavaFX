@@ -18,6 +18,8 @@ import pl.roquv.passwordgeneratorjavafx.App;
 import pl.roquv.passwordgeneratorjavafx.ConfigManager;
 import pl.roquv.passwordgeneratorjavafx.Generator.PasswordGenerator;
 
+import java.util.ResourceBundle;
+
 public class AppWindowController {
     @FXML
     private TextField passwordTextField;
@@ -46,17 +48,21 @@ public class AppWindowController {
 
     private final Alerts alerts = new Alerts();
 
+    private ResourceBundle bundle;
+
     // Minimal and Maximal size of password
     private final int passwordMinLength = Integer.parseInt(ConfigManager.getProperty("password.length.min"));
     private final int passwordMaxLength = Integer.parseInt(ConfigManager.getProperty("password.length.max"));
 
     @FXML
     public void initialize() {
+        bundle = ResourceBundle.getBundle("pl.roquv.passwordgeneratorjavafx.language", App.getCurrentLocale());
+
         passwordLengthSlider.setMin(passwordMinLength);
         passwordLengthSlider.setMax(passwordMaxLength);
 
         // Set Initial value of slider to title
-        passwordLengthText.setText("Characters: " + (int) passwordLengthSlider.getValue());
+        passwordLengthText.setText(bundle.getString("characters.label") + " " + (int) passwordLengthSlider.getValue());
 
         // Set text color and effect
         passwordLengthText.setFill(Color.WHITE);
@@ -140,7 +146,7 @@ public class AppWindowController {
     }
 
     private void updatePasswordLengthTitle(int newValue) {
-        passwordLengthText.setText("Characters: " + newValue);
+        passwordLengthText.setText(bundle.getString("characters.label") + " " + newValue);
     }
 
     private void openNewWindow(String title, String fxmlPathName, String iconPathName) {

@@ -14,15 +14,16 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 public class App extends Application {
-    
+
+    private static Locale currentLocale = determinateLocale();
+
     private static final String FXML_FILE_PATH = "views/main-view.fxml";
     private static final String ICON_FILE_PATH = "icons/main-icon.png";
 
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            Locale locale = determinateLocale();
-            ResourceBundle bundle = loadResourceBundle(locale);
+            ResourceBundle bundle = loadResourceBundle(currentLocale);
 
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(FXML_FILE_PATH), bundle);
             Scene scene = new Scene(fxmlLoader.load(), 460, 445);
@@ -52,6 +53,14 @@ public class App extends Application {
             default:
                 return Locale.of("en");
         }
+    }
+
+    public static Locale getCurrentLocale() {
+        return currentLocale;
+    }
+
+    public static void setCurrentLocale(Locale locale) {
+        currentLocale = locale;
     }
 
     private void configureStage(Stage stage, ResourceBundle bundle, Scene scene) {
