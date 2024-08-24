@@ -78,6 +78,7 @@ public class SaveWindowController {
             alerts.showInfoMessage("Passwords successfully saved to " + file.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
+            alerts.showErrorMessage("An error occurred while saving the file");
         }
     }
 
