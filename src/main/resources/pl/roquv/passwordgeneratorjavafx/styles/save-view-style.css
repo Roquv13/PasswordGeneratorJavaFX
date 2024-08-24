@@ -11,3 +11,39 @@
     -fx-text-fill: #ffffff;
     -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);
 }
+
+.save-file-button {
+    -fx-pref-height: 40px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #048504;;
+    -fx-background-radius: 9px;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000;
+    -fx-border-radius: 6px;
+}
+
+.clear-button {
+    -fx-pref-height: 40px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #0077FFBC;
+    -fx-background-radius: 9px;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000;
+    -fx-border-radius: 6px;
+}
+
+.close-button {
+    -fx-pref-height: 40px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #FF0000BC;
+    -fx-background-radius: 9px;
+    -fx-background-insets: 0;
+    -fx-border-color: #000000;
+    -fx-border-radius: 6px;
+}

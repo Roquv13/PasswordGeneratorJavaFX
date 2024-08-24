@@ -15,9 +15,9 @@
         <Label text="Saved Passwords" styleClass="header-label" alignment="CENTER"/>
         <ListView fx:id="passwordListView"/>
         <HBox alignment="CENTER" spacing="10">
-            <Button fx:id="closeButton" onAction="#handleCloseButtonClick" text="Close"/>
-            <Button fx:id="clearButton" onAction="#handleClearButtonClick" text="Clear"/>
-            <Button fx:id="saveToFileButton" onAction="#handleSaveToFileButtonClick" text="Save To File"/>
+            <Button fx:id="saveToFileButton" onAction="#handleSaveToFileButtonClick" text="Save To File" styleClass="save-file-button"/>
+            <Button fx:id="clearButton" onAction="#handleClearButtonClick" text="Clear" styleClass="clear-button"/>
+            <Button fx:id="closeButton" onAction="#handleCloseButtonClick" text="Close" styleClass="close-button"/>
         </HBox>
     </VBox>
 </AnchorPane>
