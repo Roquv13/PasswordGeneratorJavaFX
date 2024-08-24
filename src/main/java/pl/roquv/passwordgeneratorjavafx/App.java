@@ -14,32 +14,51 @@ import java.util.PropertyResourceBundle;
 import java.util.ResourceBundle;
 
 public class App extends Application {
+    
+    private static final String FXML_FILE_PATH = "views/main-view.fxml";
+    private static final String ICON_FILE_PATH = "icons/main-icon.png";
 
     @Override
     public void start(Stage stage) throws IOException {
+        try {
+            Locale locale = determinateLocale();
+            ResourceBundle bundle = loadResourceBundle(locale);
 
-        Locale language;
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(FXML_FILE_PATH), bundle);
+            Scene scene = new Scene(fxmlLoader.load(), 460, 445);
 
-        if (ConfigManager.getProperty("app.language").equals("pl")) {
-            language = Locale.of("pl");
-        } else {
-            language = Locale.of("en");
+            configureStage(stage, bundle, scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
         }
 
-        // Load the resource bundle with UTF-8 encoding
-        String bundlePath = "/pl/roquv/passwordgeneratorjavafx/language_" + language.getLanguage() + ".properties";
-        ResourceBundle bundle;
+    }
+
+    private ResourceBundle loadResourceBundle(Locale locale) throws IOException {
+        // Load the resource bundle
+        String bundlePath = String.format("/pl/roquv/passwordgeneratorjavafx/language_%s.properties", locale.getLanguage());
         try (InputStreamReader reader = new InputStreamReader(
-                App.class.getResourceAsStream(bundlePath), StandardCharsets.UTF_8)) {
-            bundle = new PropertyResourceBundle(reader);
+                getClass().getResourceAsStream(bundlePath), StandardCharsets.UTF_8)) {
+            return new PropertyResourceBundle(reader);
         }
+    }
 
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("views/main-view.fxml"), bundle);
-        Scene scene = new Scene(fxmlLoader.load(), 460, 445);
-        stage.setTitle("PasswordGenerator");
+    private static Locale determinateLocale() {
+        String language = ConfigManager.getProperty("app.language");
+        switch (language) {
+            case "pl":
+                return Locale.of("pl");
+            default:
+                return Locale.of("en");
+        }
+    }
+
+    private void configureStage(Stage stage, ResourceBundle bundle, Scene scene) {
+        stage.setTitle(bundle.getString("window.title"));
         stage.setScene(scene);
 
-        String iconPath = getClass().getResource("icons/main-icon.png").toExternalForm();
+        String iconPath = getClass().getResource(ICON_FILE_PATH).toExternalForm();
         stage.getIcons().add(new Image(iconPath));
 
         stage.show();
