@@ -20,9 +20,6 @@ public class SaveWindowController {
     ListView<String> passwordListView;
 
     @FXML
-    private Button closeButton;
-
-    @FXML
     private Button clearButton;
 
     @FXML
@@ -38,14 +35,9 @@ public class SaveWindowController {
     }
 
     @FXML
-    public void handleCloseButtonClick() {
-       closeWindow();
-    }
-
-    @FXML
     public void handleClearButtonClick() {
         clearPasswords();
-        closeWindow();
+        closeWindow(clearButton);
     }
 
     @FXML
@@ -86,8 +78,8 @@ public class SaveWindowController {
         savedPasswords.add(password);
     }
 
-    private void closeWindow() {
-        Stage stage = (Stage) closeButton.getScene().getWindow();
+    private void closeWindow(Button button) {
+        Stage stage = (Stage) button.getScene().getWindow();
         stage.close();
     }
 
