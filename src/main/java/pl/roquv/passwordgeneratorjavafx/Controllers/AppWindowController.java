@@ -127,15 +127,15 @@ public class AppWindowController {
 
     public void handleOpenPasswordsWindowButtonClick() {
         // Open password list window
-        openNewWindow("Save Password", "save.fxml", "icons/main-icon.png");
+        openNewWindow("Save Password", "save-view.fxml", "icons/main-icon.png");
     }
 
     public void handleSettingsButtonClick() {
-        openNewWindow("Settings", "settings.fxml", "icons/settings-icon.png");
+        openNewWindow("Settings", "settings-view.fxml", "icons/settings-icon.png");
     }
 
     public void handleHelpButtonClick() {
-        openNewWindow("Help", "help.fxml", "icons/help-icon.png");
+        openNewWindow("Help", "help-view.fxml", "icons/help-icon.png");
     }
 
     private String getPassword() {

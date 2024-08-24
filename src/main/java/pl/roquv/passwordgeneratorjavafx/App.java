@@ -12,7 +12,7 @@ import java.nio.file.Path;
 public class App extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("app-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 460, 445);
         stage.setTitle("PasswordGenerator");
         stage.setScene(scene);
