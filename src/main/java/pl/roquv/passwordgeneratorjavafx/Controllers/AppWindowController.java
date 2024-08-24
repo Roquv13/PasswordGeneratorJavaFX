@@ -2,24 +2,20 @@ package pl.roquv.passwordgeneratorjavafx.Controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.css.converter.EffectConverter;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.Effect;
 import javafx.scene.image.Image;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import pl.roquv.passwordgeneratorjavafx.Alerts;
 import pl.roquv.passwordgeneratorjavafx.App;
-import pl.roquv.passwordgeneratorjavafx.PasswordGenerator;
+import pl.roquv.passwordgeneratorjavafx.Generator.PasswordGenerator;
 
 public class AppWindowController {
     @FXML

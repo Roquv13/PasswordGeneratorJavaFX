@@ -1,4 +1,4 @@
-package pl.roquv.passwordgeneratorjavafx;
+package pl.roquv.passwordgeneratorjavafx.Generator;
 
 import java.util.Random;
 
@@ -16,10 +16,10 @@ public class PasswordGenerator {
         StringBuilder passwordBuilder = new StringBuilder();
 
         String validCharacters = "";
-        if (includeLowercase) validCharacters += Constants.LOWERCASE_CHARACTERS;
-        if (includeUppercase) validCharacters += Constants.UPPERCASE_CHARACTERS;
-        if (includeNumbers) validCharacters += Constants.NUMBERS;
-        if (includeSpecialSymbols) validCharacters += Constants.SPECIAL_SYMBOLS;
+        if (includeLowercase) validCharacters += GeneratorConstants.LOWERCASE_CHARACTERS;
+        if (includeUppercase) validCharacters += GeneratorConstants.UPPERCASE_CHARACTERS;
+        if (includeNumbers) validCharacters += GeneratorConstants.NUMBERS;
+        if (includeSpecialSymbols) validCharacters += GeneratorConstants.SPECIAL_SYMBOLS;
 
         for(int i = 0; i < length; i++) {
             int randomIndex = random.nextInt(validCharacters.length());

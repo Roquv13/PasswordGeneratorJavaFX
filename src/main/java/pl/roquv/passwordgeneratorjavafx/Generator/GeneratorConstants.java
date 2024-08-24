@@ -1,6 +1,6 @@
-package pl.roquv.passwordgeneratorjavafx;
+package pl.roquv.passwordgeneratorjavafx.Generator;
 
-public class Constants {
+public class GeneratorConstants {
     public static final String LOWERCASE_CHARACTERS = "abcdefghijklmnoprstuvwxyz";
     public static final String UPPERCASE_CHARACTERS = "ABCDEFGHIJKLMOPRSTUVWXYZ";
     public static final String NUMBERS = "0123456789";
