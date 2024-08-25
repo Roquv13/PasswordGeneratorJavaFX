@@ -1,17 +1,24 @@
 package pl.roquv.passwordgeneratorjavafx.Controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import pl.roquv.passwordgeneratorjavafx.ConfigManager;
 
 public class SettingsWindowController {
     @FXML
     private ChoiceBox<String> choiceBoxLanguage;
 
     @FXML
+    public Label appVersion;
+
+    @FXML
     private void initialize() {
         initializeChoiceBoxLanguage();
+        appVersion.setText("App Version: " + ConfigManager.getProperty("app.version"));
     }
+
+
 
     private void initializeChoiceBoxLanguage() {
         choiceBoxLanguage.getItems().addAll("English", "Polish");

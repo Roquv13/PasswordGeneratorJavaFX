@@ -1,15 +1,48 @@
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Button?>
-<AnchorPane prefHeight="420" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.SettingsWindowController">
-    <VBox alignment="CENTER" spacing="10" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
-        <HBox alignment="CENTER" spacing="10">
-            <Label text="Language"/>
-            <ChoiceBox fx:id="choiceBoxLanguage"/>
-        </HBox>
-        <Button text="Save"/>
-    </VBox>
-</AnchorPane>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.SettingsWindowController">
+   <top>
+      <Label text="Settings" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </Label>
+   </top>
+   <center>
+       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <VBox.margin>
+                   <Insets top="10.0"/>
+               </VBox.margin>
+               <Label prefHeight="25.0" text="Language:">
+                   <HBox.margin>
+                       <Insets right="5.0"/>
+                   </HBox.margin>
+               </Label>
+               <ChoiceBox  fx:id="choiceBoxLanguage" prefHeight="25.0">
+                   <HBox.margin>
+                       <Insets left="5.0"/>
+                   </HBox.margin>
+               </ChoiceBox>
+           </HBox>
+       </VBox>
+   </center>
+   <bottom>
+       <VBox prefHeight="50.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+           <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <Button text="Save"/>
+           </HBox>
+           <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <Label fx:id="appVersion">
+                   <HBox.margin>
+                       <Insets right="10.0" bottom="10.0"/>
+                   </HBox.margin>
+               </Label>
+           </HBox>
+       </VBox>
+   </bottom>
+</BorderPane>
