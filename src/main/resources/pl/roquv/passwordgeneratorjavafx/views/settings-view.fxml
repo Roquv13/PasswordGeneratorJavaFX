@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.SettingsWindowController">
-   <top>
-      <Label text="Settings" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets top="20.0" />
-         </padding>
-      </Label>
-   </top>
-   <center>
+
+    <stylesheets>
+        <URL value="@../styles/settings-view-style.css" />
+    </stylesheets>
+
+    <top>
+      <Label text="Settings" BorderPane.alignment="CENTER" styleClass="header-label"/>
+    </top>
+
+    <center>
        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <VBox.margin>
@@ -30,8 +33,9 @@
                </ChoiceBox>
            </HBox>
        </VBox>
-   </center>
-   <bottom>
+    </center>
+
+    <bottom>
        <VBox prefHeight="50.0" prefWidth="100.0" BorderPane.alignment="CENTER">
            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <Button text="Save"/>
@@ -44,5 +48,6 @@
                </Label>
            </HBox>
        </VBox>
-   </bottom>
+    </bottom>
+    
 </BorderPane>
