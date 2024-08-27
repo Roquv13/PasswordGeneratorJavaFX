@@ -5,6 +5,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.roquv.passwordgeneratorjavafx.Controllers.SettingsWindowController">
 
     <stylesheets>
@@ -12,12 +14,17 @@
     </stylesheets>
 
     <top>
-      <Label text="Settings" BorderPane.alignment="CENTER" styleClass="header-label"/>
+        <HBox spacing="10" alignment="CENTER">
+            <ImageView fitHeight="40" fitWidth="40">
+                <Image url="@../icons/settings-icon.png" />
+            </ImageView>
+            <Label text="Settings" styleClass="header-label"/>
+        </HBox>
     </top>
 
     <center>
-       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-           <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+       <VBox prefHeight="200.0" prefWidth="100.0">
+           <HBox prefHeight="30.0" prefWidth="200.0">
                <VBox.margin>
                    <Insets top="10.0"/>
                </VBox.margin>
@@ -26,11 +33,45 @@
                        <Insets right="5.0"/>
                    </HBox.margin>
                </Label>
-               <ChoiceBox  fx:id="choiceBoxLanguage" prefHeight="25.0">
+               <ChoiceBox fx:id="choiceBoxLanguage" prefHeight="25.0">
                    <HBox.margin>
                        <Insets left="5.0"/>
                    </HBox.margin>
                </ChoiceBox>
+           </HBox>
+
+           <HBox alignment="CENTER">
+               <Label alignment="CENTER" text="Password" styleClass="password-settings-label">
+                   <HBox.margin>
+                       <Insets top="10" bottom="10"/>
+                   </HBox.margin>
+               </Label>
+           </HBox>
+
+           <HBox prefHeight="30.0" prefWidth="200.0">
+               <Label prefHeight="25.0" text="Min Length:" styleClass="settings-description">
+                   <HBox.margin>
+                       <Insets right="5.0"/>
+                   </HBox.margin>
+               </Label>
+               <TextField>
+                   <HBox.margin>
+                       <Insets left="5.0"/>
+                   </HBox.margin>
+               </TextField>
+           </HBox>
+
+           <HBox prefHeight="30.0" prefWidth="200.0">
+               <Label prefHeight="25.0" text="Max Length:" styleClass="settings-description">
+                   <HBox.margin>
+                       <Insets right="5.0"/>
+                   </HBox.margin>
+               </Label>
+               <TextField>
+                   <HBox.margin>
+                       <Insets left="5.0"/>
+                   </HBox.margin>
+               </TextField>
            </HBox>
        </VBox>
     </center>

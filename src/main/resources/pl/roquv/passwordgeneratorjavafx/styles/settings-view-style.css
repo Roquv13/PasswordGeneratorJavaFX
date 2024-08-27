@@ -12,6 +12,14 @@
     -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);
 }
 
+/* Password settings label */
+.password-settings-label{
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, black, 1.5, 1, 0, 0);
+}
+
 /* Settings description */
 .settings-description{
     -fx-font-size: 16px;
