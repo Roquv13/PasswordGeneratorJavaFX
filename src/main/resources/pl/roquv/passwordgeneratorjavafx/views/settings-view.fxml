@@ -21,7 +21,7 @@
                <VBox.margin>
                    <Insets top="10.0"/>
                </VBox.margin>
-               <Label prefHeight="25.0" text="Language:">
+               <Label prefHeight="25.0" text="Language:" styleClass="settings-description">
                    <HBox.margin>
                        <Insets right="5.0"/>
                    </HBox.margin>

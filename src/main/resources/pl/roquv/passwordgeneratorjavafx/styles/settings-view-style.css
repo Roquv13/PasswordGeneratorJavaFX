@@ -12,6 +12,12 @@
     -fx-effect: dropshadow(gaussian, black, 2, 1, 0, 0);
 }
 
+/* Settings description */
+.settings-description{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
 /* Save password button */
 .save-button{
     -fx-pref-height: 40px;
