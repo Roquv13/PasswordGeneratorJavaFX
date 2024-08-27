@@ -56,8 +56,8 @@
                    </padding>
                </VBox>
                <VBox alignment="BASELINE_RIGHT" prefWidth="200.0" spacing="10">
-                   <TextField maxWidth="35" minHeight="25" />
-                   <TextField maxWidth="35" minHeight="25" />
+                   <TextField maxWidth="35" minHeight="25" fx:id="minPasswordLength"/>
+                   <TextField maxWidth="35" minHeight="25" fx:id="maxPasswordLength"/>
                    <padding>
                       <Insets right="100.0" />
                    </padding>

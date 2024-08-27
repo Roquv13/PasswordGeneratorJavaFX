@@ -3,6 +3,7 @@ package pl.roquv.passwordgeneratorjavafx.Controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import pl.roquv.passwordgeneratorjavafx.ConfigManager;
 
 public class SettingsWindowController {
@@ -13,9 +14,19 @@ public class SettingsWindowController {
     public Label appVersion;
 
     @FXML
+    public TextField minPasswordLength;
+
+    @FXML
+    public TextField maxPasswordLength;
+
+    @FXML
     private void initialize() {
         initializeChoiceBoxLanguage();
         appVersion.setText("App Version: " + ConfigManager.getProperty("app.version"));
+
+        // Display values from properties
+        minPasswordLength.setText(ConfigManager.getProperty("password.length.min"));
+        maxPasswordLength.setText(ConfigManager.getProperty("password.length.max"));
     }
 
 
