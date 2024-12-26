@@ -91,7 +91,7 @@ public class AppWindowController {
             alerts.showErrorMessage(bundle.getString("checkbox.error.message"));
         } else {
             String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
-                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected);
+                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected,2);
 
             updatePasswordLabel(generatedPassword);
         }
