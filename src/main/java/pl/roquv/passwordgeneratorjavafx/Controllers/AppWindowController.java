@@ -42,6 +42,9 @@ public class AppWindowController {
     @FXML
     private CheckBox checkBoxSpecialSymbols;
 
+    @FXML
+    private CheckBox checkBoxCharUnique;
+
     private final PasswordGenerator passwordGenerator = new PasswordGenerator();
 
     private final SaveWindowController saveWindowController = new SaveWindowController();
@@ -86,12 +89,13 @@ public class AppWindowController {
         boolean checkBoxUppercaseSelected = checkBoxUppercase.isSelected();
         boolean checkBoxNumbersSelected = checkBoxNumbers.isSelected();
         boolean checkBoxSpecialSymbolsSelected = checkBoxSpecialSymbols.isSelected();
+        boolean checkBoxCharUniqueSelected = checkBoxCharUnique.isSelected();
 
-        if (!isAnyCheckboxSelected()) {
+        if (!isAnySymbolCheckboxSelected()) {
             alerts.showErrorMessage(bundle.getString("checkbox.error.message"));
         } else {
             String generatedPassword = passwordGenerator.generatePassword(passwordLength, checkBoxLowercaseSelected,
-                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected,2);
+                    checkBoxUppercaseSelected, checkBoxNumbersSelected, checkBoxSpecialSymbolsSelected,checkBoxCharUniqueSelected);
 
             updatePasswordLabel(generatedPassword);
         }
@@ -180,7 +184,7 @@ public class AppWindowController {
         return  ((passwordLength >= min) && (passwordLength <= max));
     }
 
-    private boolean isAnyCheckboxSelected() {
+    private boolean isAnySymbolCheckboxSelected() {
         return checkBoxLowercase.isSelected() || checkBoxUppercase.isSelected() ||
                 checkBoxNumbers.isSelected() || checkBoxSpecialSymbols.isSelected();
     }

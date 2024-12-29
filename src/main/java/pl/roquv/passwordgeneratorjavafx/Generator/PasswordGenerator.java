@@ -18,7 +18,7 @@ public class PasswordGenerator {
     }
 
     public String generatePassword(int length, boolean includeLowercase, boolean includeUppercase,
-                                   boolean includeNumbers, boolean includeSpecialSymbols, int maxCharFrequency) {
+                                   boolean includeNumbers, boolean includeSpecialSymbols, boolean uniqueChar) {
 
         StringBuilder passwordBuilder = new StringBuilder();
         Map<Character, Integer> charFrequency = new HashMap<>();
@@ -32,15 +32,17 @@ public class PasswordGenerator {
         for(int i = 0; i < length; i++) {
             char randomChar;
 
-            if (length > maxCharFrequency * validCharacters.length()) {
-                alerts.showInfoMessage("Your password cannot be generated. Please check your parameters.");
-                break;
+            if (uniqueChar) {
+                if (length > validCharacters.length()) {
+                    alerts.showInfoMessage("Your password cannot be generated. Please check your parameters.");
+                    break;
+                }
             }
 
             do {
                 int randomIndex = random.nextInt(validCharacters.length());
                 randomChar = validCharacters.charAt(randomIndex);
-            } while (charFrequency.getOrDefault(randomChar, 0) >= maxCharFrequency);
+            } while (charFrequency.getOrDefault(randomChar, 0) >= 1);
 
             passwordBuilder.append(randomChar);
 

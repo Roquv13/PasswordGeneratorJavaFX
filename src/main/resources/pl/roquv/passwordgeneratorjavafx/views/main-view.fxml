@@ -35,6 +35,7 @@
       <CheckBox fx:id="checkBoxUppercase" styleClass="checkbox-text" text="%checkbox.uppercase" GridPane.columnIndex="0" GridPane.rowIndex="1" />
       <CheckBox fx:id="checkBoxNumbers" styleClass="checkbox-text" text="%checkbox.numbers" GridPane.columnIndex="1" GridPane.rowIndex="0" />
       <CheckBox fx:id="checkBoxSpecialSymbols" styleClass="checkbox-text" text="%checkbox.symbols" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <CheckBox fx:id="checkBoxCharUnique" styleClass="checkbox-text" text="%checkbox.char.unique" GridPane.columnIndex="0" GridPane.rowIndex="2" />
     </GridPane>
 
     <!--Generate Button-->

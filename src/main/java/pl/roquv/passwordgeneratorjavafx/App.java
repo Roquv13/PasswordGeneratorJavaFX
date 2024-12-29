@@ -26,7 +26,7 @@ public class App extends Application {
         try {
             ResourceBundle bundle = loadResourceBundle(currentLocale);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(FXML_FILE_PATH), bundle);
-            Scene scene = new Scene(fxmlLoader.load(), 460, 445);
+            Scene scene = new Scene(fxmlLoader.load(), 460, 485);
 
             configureStage(stage, bundle, scene);
         } catch (IOException e) {
