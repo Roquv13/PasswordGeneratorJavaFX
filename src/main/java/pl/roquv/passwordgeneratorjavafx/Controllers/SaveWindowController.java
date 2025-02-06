@@ -29,6 +29,8 @@ public class SaveWindowController {
 
     private final Alerts alerts = new Alerts();
 
+    private final WindowController windowController = new WindowController();
+
     @FXML
     public void initialize() {
         passwordListView.getItems().setAll(savedPasswords);
@@ -37,7 +39,7 @@ public class SaveWindowController {
     @FXML
     public void handleClearButtonClick() {
         clearPasswords();
-        closeWindow(clearButton);
+        windowController.closeWindow(clearButton);
     }
 
     @FXML
@@ -76,11 +78,6 @@ public class SaveWindowController {
 
     public static void addPassword(String password) {
         savedPasswords.add(password);
-    }
-
-    private void closeWindow(Button button) {
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.close();
     }
 
     private void clearPasswords() {
