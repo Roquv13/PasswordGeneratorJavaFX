@@ -69,7 +69,7 @@
     <bottom>
        <VBox prefHeight="50.0" prefWidth="100.0" BorderPane.alignment="CENTER">
            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-               <Button styleClass="save-button" text="Save" onAction="#handleSaveButtonClick" />
+               <Button fx:id="saveButton" styleClass="save-button" text="Save" onAction="#handleSaveButtonClick" />
            </HBox>
            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                <Label fx:id="appVersion">

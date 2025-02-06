@@ -2,6 +2,7 @@ package pl.roquv.passwordgeneratorjavafx.Controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,6 +14,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class SettingsWindowController {
+
+    @FXML
+    private Button saveButton;
+
     @FXML
     private ChoiceBox<String> choiceBoxLanguage;
 
@@ -35,7 +40,7 @@ public class SettingsWindowController {
         maxPasswordLengthText.setText(ConfigManager.getProperty("password.length.max"));
     }
 
-
+    WindowController windowController = new WindowController();
 
     private void initializeChoiceBoxLanguage() {
         choiceBoxLanguage.getItems().addAll("English", "Polish");
@@ -80,5 +85,7 @@ public class SettingsWindowController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        windowController.closeWindow(saveButton);
     }
 }
