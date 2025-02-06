@@ -7,6 +7,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import pl.roquv.passwordgeneratorjavafx.ConfigManager;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 public class SettingsWindowController {
     @FXML
     private ChoiceBox<String> choiceBoxLanguage;
@@ -54,5 +59,26 @@ public class SettingsWindowController {
     public void handleSaveButtonClick(ActionEvent event) {
         String minPasswordLength = minPasswordLengthText.getText();
         String maxPasswordLength = maxPasswordLengthText.getText();
+
+        Properties properties = new Properties();
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream("src/main/resources/pl/roquv/passwordgeneratorjavafx/config.properties");
+            properties.load(fileInputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        properties.setProperty("password.length.min", minPasswordLength);
+        properties.setProperty("password.length.max", maxPasswordLength);
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("src/main/resources/pl/roquv/passwordgeneratorjavafx/config.properties");
+            properties.store(fileOutputStream, null);
+
+            fileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
